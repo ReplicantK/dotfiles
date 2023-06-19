@@ -1,0 +1,38 @@
+# clipboard enabled
+set selection-clipboard "clipboard"
+
+# font
+set font "inconsolata 15"
+
+# page scrolling options
+set pages-per-row "true"
+set scroll-page-aware "true"
+set scroll-step "100"
+
+# hides gui options at the bottom -- ctrl + n opens status bar
+set guioptions ""
+
+# notifications -- example: when copying text
+set notification-bg "#90A959" #0B
+set notification-fg "#151515" #00
+
+# statusbar stuff
+set statusbar-bg "#202020" #01
+set statusbar-fg "#B0B0B0" #04 -- not sure of this color
+
+# dark mode
+set recolor "true"
+set recolor-darkcolor "#E0E0E0" #06
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+set inputbar-fg "#FFFFFF" #02
+set notification-error-bg "#AC4142" #08
+set notification-error-fg "#151515" #00
+set notification-warning-bg "#AC4142" #08
+set notification-warning-fg "#151515" #00
+set highlight-color "#F4BF75" #0A
+set highlight-active-color "#6A9FB5" #0D
+set completion-highlight-fg "#151515" #02
+set completion-highlight-bg "#90A959" #0C
+set completion-bg "#303030" #02
+set completion-fg "#E0E0E0" #0C
