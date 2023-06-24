@@ -1,3 +1,4 @@
+set termguicolors
 set ruler
 set number
 set hlsearch
@@ -8,9 +9,10 @@ set shiftwidth=2
 set expandtab
 set autoindent
 syntax on
-colorscheme peachpuff
-hi Search ctermfg=88 ctermbg=214
-hi Comment ctermfg=gray ctermbg=NONE
+colorscheme base16-tokyo-city-mod
+"colorscheme peachpuff
+"hi Search ctermfg=88 ctermbg=214
+"hi Comment ctermfg=gray ctermbg=NONE
 hi clear TODO
 hi link TODO Comment
 inoremap jk <Esc>
