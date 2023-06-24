@@ -1,0 +1,5 @@
+nice fonts:
+
+berkeley mono
+roboto mono
+jetbrains mono
