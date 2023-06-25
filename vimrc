@@ -10,6 +10,13 @@ set expandtab
 set autoindent
 syntax on
 colorscheme base16-tokyo-city-mod
+set laststatus=2
+set noshowmode
+
+let g:lightline = {
+  \'colorscheme': 'base16_tokyo_city_lightline_mod', 
+  \ }
+
 "colorscheme peachpuff
 "hi Search ctermfg=88 ctermbg=214
 "hi Comment ctermfg=gray ctermbg=NONE

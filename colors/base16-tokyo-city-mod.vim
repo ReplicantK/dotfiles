@@ -15,14 +15,10 @@ if !has("gui_running")
   endif
 endif
 
-" Original GUI color definitions for background
-"let s:gui00        = "171d23"
-"let g:base16_gui00 = "171d23"
 
 " My peronal GUI color definitions mod for background
 let s:gui00        = "0b1417"
 let g:base16_gui00 = "0b1417"
-
 let s:gui01        = "1d252c"
 let g:base16_gui01 = "1d252c"
 let s:gui02        = "28323a"
@@ -108,7 +104,6 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  "let g:terminal_color_0 =  "#171d23"
   let g:terminal_color_0 =  "#0b1417"
   let g:terminal_color_1 =  "#f7768e"
   let g:terminal_color_2 =  "#9ece6a"
@@ -133,7 +128,6 @@ if has("nvim")
   endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
-        "\ "#171d23",
         \ "#0b1417",
         \ "#f7768e",
         \ "#9ece6a",
@@ -163,7 +157,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-tokyo-city-dark"
+let g:colors_name = "base16-tokyo-city-mod"
 
 " Highlighting function
 " Optional variables are attributes and guisp
