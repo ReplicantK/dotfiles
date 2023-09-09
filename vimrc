@@ -17,9 +17,7 @@ let g:lightline = {
   \'colorscheme': 'base16_tokyo_city_lightline_mod', 
   \ }
 
-"colorscheme peachpuff
-"hi Search ctermfg=88 ctermbg=214
-"hi Comment ctermfg=gray ctermbg=NONE
+let g:is_posix = 1
 hi clear TODO
 hi link TODO Comment
 inoremap jk <Esc>

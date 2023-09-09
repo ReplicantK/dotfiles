@@ -91,3 +91,13 @@ app/release/output.json
 
 # diagram stuff
 *.mwb.bak
+
+# misc
+.cache
+.config
+.replit
+.upm
+replit.nix
+replit_zip_error_log.txt
+*DO_NOT_GITHUB*
+.breakpoints

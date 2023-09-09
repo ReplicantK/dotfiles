@@ -1,9 +1,9 @@
 {
-  "timeStamp": 1684669536052,
-  "version": "1.49.2",
+  "timeStamp": 1693829673206,
+  "version": "1.51.0",
   "userSettings": {
     "importedLists": [],
-    "popupPanelSections": 15
+    "popupPanelSections": 31
   },
   "selectedFilterLists": [
     "user-filters",
