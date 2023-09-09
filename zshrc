@@ -38,7 +38,6 @@ fi
 if [[ "$OSTYPE" =~ ^linux ]]; then
   export PATH="/usr/sbin:$PATH"
   alias ls='ls --color=auto'
-  alias grep='ls --color=auto'
 fi
 
 # base for terminal color
