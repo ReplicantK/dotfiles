@@ -21,4 +21,6 @@ let g:is_posix = 1
 hi clear TODO
 hi link TODO Comment
 inoremap jk <Esc>
+nnoremap j gj
+nnoremap k gk
 autocmd FileType make setlocal noexpandtab
