@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# TODO: build an automatic lightline installer to this script
 echo "Checking for .config directory... \c"
 if [ ! -d "$HOME/.config/" ]
 then
