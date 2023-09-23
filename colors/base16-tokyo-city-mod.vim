@@ -17,8 +17,8 @@ endif
 
 
 " My peronal GUI color definitions mod for background
-let s:gui00        = "0b1417"
-let g:base16_gui00 = "0b1417"
+let s:gui00        = "0b1416"
+let g:base16_gui00 = "0b1416"
 let s:gui01        = "1d252c"
 let g:base16_gui01 = "1d252c"
 let s:gui02        = "28323a"
@@ -104,7 +104,7 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#0b1417"
+  let g:terminal_color_0 =  "#0b1416"
   let g:terminal_color_1 =  "#f7768e"
   let g:terminal_color_2 =  "#9ece6a"
   let g:terminal_color_3 =  "#b7c5d3"
@@ -128,7 +128,7 @@ if has("nvim")
   endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
-        \ "#0b1417",
+        \ "#0b1416",
         \ "#f7768e",
         \ "#9ece6a",
         \ "#b7c5d3",
