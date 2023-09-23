@@ -1,12 +1,19 @@
+#!/bin/sh
+
+# this script is not entirely portable (posix) because of the aliases being used
+# future iterations of this script may include shell functions as replacements
+
 # shell history
-export HISTFILE="$HOME/.zsh_history"
+export HISTFILE="$HOME/.history"
+
+# max number of commands stored in history file
 export HISTFILESIZE=1000000000
+
+# current session command memory 
 export HISTSIZE=1000000000
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
 
 # macos environment
-if [[ "$OSTYPE" =~ ^darwin ]]; then
+if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # node
   #export NVM_DIR="$HOME/.nvm"
   #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -35,25 +42,41 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 fi
 
 # linux environment
-if [[ "$OSTYPE" =~ ^linux ]]; then
+if [ $(echo "$OSTYPE" | grep -c 'linux') -gt 0 ]; then
   export PATH="/usr/sbin:$PATH"
   alias ls='ls --color=auto'
 fi
 
-# base for terminal color
-autoload -U colors && colors
+# ssh key for mininet
+if [ $(echo "$USER" | grep -c 'mininet') -gt 0 ]; then
+  /usr/bin/keychain $HOME/.ssh/sevenwhiteclouds
+  source $HOME/.keychain/mininet-vm-sh
+fi
 
-# auto complete
-autoload -U compinit && compinit
+# all zsh specific options here
+# colors in particular need to come after because color setup is declared up top
+if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
+  # history that is saved from the current session into the history file
+  export SAVEHIST=10000000
+  # write to the history file immediately
+  setopt INC_APPEND_HISTORY
+  # only save original commands and remove old duplicates
+  setopt HIST_IGNORE_ALL_DUPS
 
-# ps1 theme
-PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+  # base for terminal color
+  autoload -U colors && colors
+  # auto complete
+  autoload -U compinit && compinit
 
-# completion, menu, all with color
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' '+r:|[._-]=** r:|=** l:|=*'
+  # ps1 theme
+  PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+
+  # completion, menu, all with color
+  zstyle ':completion:*' completer _complete
+  zstyle ':completion:*' menu select
+  zstyle ':completion:*' list-colors ''
+  zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' '+r:|[._-]=** r:|=** l:|=*'
+fi
 
 # aliases
 alias grep='grep --color=auto'
