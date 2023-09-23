@@ -4,7 +4,7 @@
 # future iterations of this script may include shell functions as replacements
 
 # shell history
-export HISTFILE="$HOME/.history"
+export HISTFILE="$HOME/.sh_history"
 
 # max number of commands stored in history file
 export HISTFILESIZE=1000000000
