@@ -1,5 +1,5 @@
 #!/bin/sh
-# TODO: build an automatic lightline installer to this script
+# TODO: add try checks to this script
 echo "Checking for .config directory... \c"
 if [ ! -d "$HOME/.config/" ]
 then
@@ -17,6 +17,21 @@ then
 else
   echo "found .vim directory in home."
 fi
+
+echo "Checking for lightline directory... \c"
+if [ ! -d "$HOME/.vim/pack/plugins/start/lightline" ]
+then
+  git clone 'https://github.com/itchyny/lightline.vim' "$HOME/.vim/pack/plugins/start/lightline"
+  echo 'done -> installed lightline in missing directory'
+else
+  echo "found lightline directory in .vim."
+fi
+
+for file in "$HOME/configs/lightline_colors/"*
+do
+  ln -sf "$file" "$HOME/.vim/pack/plugins/start/lightline/autoload/lightline/colorscheme/"$(basename "$file")
+done
+echo 'done -> installed lightline themes'
 
 echo "Checking for mpv directory... \c"
 if [ ! -d "$HOME/.config/mpv/" ]
