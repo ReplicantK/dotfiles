@@ -69,7 +69,7 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   autoload -U compinit && compinit
 
   # ps1 theme
-  PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+  PROMPT="%m %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[red]}%}»%{${reset_color}%} "
 
   # completion, menu, all with color
   zstyle ':completion:*' completer _complete
