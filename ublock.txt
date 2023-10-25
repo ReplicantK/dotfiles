@@ -1,6 +1,6 @@
 {
-  "timeStamp": 1693829673206,
-  "version": "1.51.0",
+  "timeStamp": 1698196034800,
+  "version": "1.52.2",
   "userSettings": {
     "importedLists": [],
     "popupPanelSections": 31
