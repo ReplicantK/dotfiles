@@ -9,13 +9,14 @@ set shiftwidth=2
 set expandtab
 set autoindent
 syntax on
-colorscheme base16-tokyo-city-mod
-set laststatus=2
+"colorscheme base16-tokyo-city-mod
+colorscheme base16-classic-dark
+"set laststatus=2
 set noshowmode
 
-let g:lightline = {
-  \'colorscheme': 'base16_tokyo_city_lightline_mod', 
-  \ }
+"let g:lightline = {
+"  \'colorscheme': 'base16_tokyo_city_lightline_mod', 
+"  \ }
 
 let g:is_posix = 1
 hi clear TODO
