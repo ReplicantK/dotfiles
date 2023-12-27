@@ -1,22 +1,18 @@
 # About
 Most of the files in this repo are supposed to be found in the home folder as dot files. 
-Symbolic links are created with the `setup.sh` script to standardize the user's working environment 
-and ease of use across different operating systems (i.e., GNU/Linux, macOS).
+Symbolic links are created with the `setup.sh` script to standardize a working environment 
+across different operating systems (i.e., GNU/Linux, macOS).
 
 The following assumes that the (this) GitHub local repository is found in the home folder.
 
-**Note:** when running the `setup.sh` script, a symbolic link called `.ideavimrc` is created in 
+**Note:** when running the `setup.sh` script, a symbolic link named `.ideavimrc` is created in 
 the home directory. This file is _not_ present in this repo but is linked to the vimrc file 
-that exists in this repo. The purpose of this symbolic link is to enable the IdeaVim plugin 
-for the IntelliJ IDEA IDE.
-
----
+that exists in this repo. The purpose of this symbolic link is to enable the same settings for the 
+IdeaVim plugin for IntelliJ.
 
 ## Installation
 1. Make the `setup.sh` script executable if it is not already by running `chmod +x setup.sh`.
 2. Run `setup.sh` with `./setup.sh`.
-
----
 
 ## More Information on These Files
 - `RectangleConfig.json`: settings for the Rectangle window manager for macOS.
