@@ -1,6 +1,7 @@
 set termguicolors
 set ruler
 set number
+set incsearch
 set hlsearch
 set backspace=indent,eol,start
 set ignorecase
