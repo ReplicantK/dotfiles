@@ -20,9 +20,9 @@ nnoremap N Nzzzv
 autocmd FileType make setlocal noexpandtab
 
 syntax on
+colorscheme base16-tokyo-city-mod
 hi clear TODO
 hi link TODO Comment
-colorscheme base16-tokyo-city-mod
 let g:lightline = {
   \'colorscheme': 'base16_tokyo_city_lightline_mod',
   \}
