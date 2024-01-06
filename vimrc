@@ -17,6 +17,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
 autocmd FileType make setlocal noexpandtab
 "set colorcolumn=80
 
