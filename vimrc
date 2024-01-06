@@ -9,19 +9,20 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-syntax on
-colorscheme base16-tokyo-city-mod
 set laststatus=2
 set noshowmode
-
-let g:lightline = {
-  \'colorscheme': 'base16_tokyo_city_lightline_mod', 
-  \ }
-
 let g:is_posix = 1
-hi clear TODO
-hi link TODO Comment
 inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
+nnoremap n nzzzv
+nnoremap N Nzzzv
 autocmd FileType make setlocal noexpandtab
+
+syntax on
+hi clear TODO
+hi link TODO Comment
+colorscheme base16-tokyo-city-mod
+let g:lightline = {
+  \'colorscheme': 'base16_tokyo_city_lightline_mod',
+  \}
