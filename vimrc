@@ -18,6 +18,7 @@ nnoremap k gk
 nnoremap n nzzzv
 nnoremap N Nzzzv
 autocmd FileType make setlocal noexpandtab
+"set colorcolumn=80
 
 syntax on
 colorscheme base16-tokyo-city-mod
