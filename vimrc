@@ -26,6 +26,4 @@ syntax on
 colorscheme base16-tokyo-city-mod
 hi clear TODO
 hi link TODO Comment
-let g:lightline = {
-  \'colorscheme': 'base16_tokyo_city_lightline_mod',
-  \}
+let g:lightline = {"colorscheme": "base16_tokyo_city_lightline_mod"}
