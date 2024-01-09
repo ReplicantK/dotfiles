@@ -1,3 +1,6 @@
+" REMINDER: reflect changes into init.lua
+
+" general quality of life
 set termguicolors
 set ruler
 set number
@@ -11,6 +14,9 @@ set expandtab
 set autoindent
 set laststatus=2
 set noshowmode
+set guicursor=""
+set mouse=""
+set colorcolumn=80
 let g:is_posix = 1
 inoremap jk <Esc>
 nnoremap j gj
@@ -20,8 +26,8 @@ nnoremap N Nzzzv
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 autocmd FileType make setlocal noexpandtab
-"set colorcolumn=80
 
+" theme and visual
 syntax on
 colorscheme base16-tokyo-city-mod
 hi clear TODO
