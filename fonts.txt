@@ -1,5 +1,6 @@
 nice fonts:
 
-berkeley mono
-roboto mono
-jetbrains mono
+berkeley mono (https://berkeleygraphics.com/typefaces/berkeley-mono/)
+iosevka (https://github.com/be5invis/Iosevka)
+roboto mono (https://fonts.google.com/specimen/Roboto+Mono)
+jetbrains mono (https://github.com/JetBrains/JetBrainsMono)
