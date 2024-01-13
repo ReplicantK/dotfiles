@@ -1,0 +1,34 @@
+fonts:
+berkeley mono (https://berkeleygraphics.com/typefaces/berkeley-mono/)
+iosevka (https://github.com/be5invis/Iosevka)
+roboto mono (https://fonts.google.com/specimen/Roboto+Mono)
+jetbrains mono (https://github.com/JetBrains/JetBrainsMono)
+
+vim themes:
+nyoom-engineering/oxocarbon.nvim
+Yazeed1s/oh-lucy.nvim
+rafamadriz/neon
+marko-cerovac/material.nvim
+bluz71/vim-moonfly-colors
+kyazdani42/blue-moon
+shaunsingh/nord.nvim
+rebelot/kanagawa.nvim
+projekt0n/github-nvim-theme
+folke/tokyonight.nvim
+tomasiser/vim-code-dark
+Mofiqul/vscode.nvim
+askfiy/visual_studio_code
+rose-pine/neovim
+EdenEast/nightfox.nvim
+aktersnurra/no-clown-fiesta.nvim
+rktjmp/lush.nvim
+mcchrish/zenbones.nvim
+Shatur/neovim-ayu
+embark-theme/vim
+
+kitty themes:
+https://github.com/dexpota/kitty-themes
+IR_Black
+Jellybeans
+Neutron
+Glacier
