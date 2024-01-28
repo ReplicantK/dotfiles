@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # TODO: add try blocks and fail checks to this script; add set -xe?
 echo "Checking for .config directory... \c"
 if [ ! -d "$HOME/.config/" ]

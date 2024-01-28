@@ -3,11 +3,6 @@
 # this script is not entirely portable (posix) because of the aliases being used
 # future iterations of this script may include shell functions as replacements
 
-# lode LO
-export LODE_HOME="$HOME/lode"
-export CCACHE_CPP2=YES
-PATH="${LODE_HOME}/opt/bin:${PATH}"
-
 # shell history
 export HISTFILE="$HOME/.sh_history"
 
@@ -45,6 +40,16 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export CLICOLOR='1'
   export LSCOLORS='ExGxFxdxCxDxDxhbadacec'
   export PATH="/usr/local/sbin:$PATH"
+
+  # temp solution. i only use nvim on macos
+  alias vi='nvim'
+  alias vim='nvim'
+  alias ovim='/usr/local/bin/vim'
+
+  # macos lode LO
+  export LODE_HOME="$HOME/lode"
+  export CCACHE_CPP2=YES
+  PATH="${LODE_HOME}/opt/bin:${PATH}"
 fi
 
 # linux environment
@@ -84,10 +89,7 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' '+r:|[._-]=** r:|=** l:|=*'
 fi
 
-# aliases
-alias vi='nvim'
-alias vim='nvim'
-alias ovim='/usr/local/bin/vim'
+# universal aliases
 alias grep='grep --color=auto'
 alias bc='bc -l'
 alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
