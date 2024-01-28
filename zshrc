@@ -3,6 +3,11 @@
 # this script is not entirely portable (posix) because of the aliases being used
 # future iterations of this script may include shell functions as replacements
 
+# lode LO
+export LODE_HOME="$HOME/lode"
+export CCACHE_CPP2=YES
+PATH="${LODE_HOME}/opt/bin:${PATH}"
+
 # shell history
 export HISTFILE="$HOME/.sh_history"
 
@@ -17,7 +22,8 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # node
   #export NVM_DIR="$HOME/.nvm"
   #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  # This loads nvm bash_completion
+  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
   # ruby
   export PATH="$HOME/.rbenv/bin:$PATH"
@@ -79,6 +85,9 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
 fi
 
 # aliases
+alias vi='nvim'
+alias vim='nvim'
+alias ovim='/usr/local/bin/vim'
 alias grep='grep --color=auto'
 alias bc='bc -l'
 alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
