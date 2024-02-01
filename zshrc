@@ -90,6 +90,7 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
 fi
 
 # universal aliases
+alias ssh_no_key='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
 alias grep='grep --color=auto'
 alias bc='bc -l'
 alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
