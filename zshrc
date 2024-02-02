@@ -90,13 +90,13 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
 fi
 
 # universal aliases
-alias ssh_no_key='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
+alias ssh-no-key='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
 alias grep='grep --color=auto'
 alias bc='bc -l'
 alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
 alias weatherc="curl 'wttr.in/Riverside?m&format=%l+:+%c+%t+%h+%m+%M+%T+\n'"
 alias mpv='mpv --profile=1080'
-alias mpvhardware='mpv --profile=hardware'
-alias mpvhigh='mpv --profile=high'
-alias mpvaudio='mpv --profile=novideo'
-alias mpvsingle='mpv --profile=single'
+alias mpv-hardware='mpv --profile=hardware'
+alias mpv-high='mpv --profile=high'
+alias mpv-audio='mpv --profile=novideo'
+alias mpv-single='mpv --profile=single'
