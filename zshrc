@@ -51,8 +51,8 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export CCACHE_CPP2=YES
   PATH="${LODE_HOME}/opt/bin:${PATH}"
 
-  # dirty trick to get cpu temp in macos
-  alias lscputemp='sudo powermetrics --samplers smc | grep -i "CPU die temperature"'
+  # dirty trick to get cpu and gpu temp in macos
+  alias lstemps='sudo powermetrics --samplers smc | grep -i "temp"'
 fi
 
 # linux environment
