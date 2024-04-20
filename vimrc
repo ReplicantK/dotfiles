@@ -45,5 +45,5 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
-nnoremap [b :bnext<cr>
-nnoremap ]b :bprev<cr>
+nnoremap [b bprev<cr>
+nnoremap ]b bnext<cr>
