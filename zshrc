@@ -41,11 +41,6 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export LSCOLORS='ExGxFxdxCxDxDxhbadacec'
   export PATH="/usr/local/sbin:$PATH"
 
-  # temp solution. i only use nvim on macos
-  alias vi='nvim'
-  alias vim='nvim'
-  alias ovim='/usr/local/bin/vim'
-
   # macos lode LO
   export LODE_HOME="$HOME/lode"
   export CCACHE_CPP2=YES
