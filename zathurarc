@@ -1,5 +1,7 @@
 # clipboard enabled
-set selection-clipboard "clipboard"
+#set selection-clipboard "clipboard"
+# disable selecting text and copying to clipboard for now
+set selection-clipboard ""
 
 # font
 set font "inconsolata 15"
