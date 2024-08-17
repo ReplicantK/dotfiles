@@ -12,6 +12,9 @@ export HISTFILESIZE=1000000000
 # current session command memory 
 export HISTSIZE=1000000000
 
+# go path
+export GOPATH="$HOME/.go"
+
 # macos environment
 if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # node
