@@ -134,7 +134,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
     "jdtls",
-    "tsserver",
+    "ts_ls",
     "pyright",
     "bashls",
     "html",
