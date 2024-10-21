@@ -146,9 +146,24 @@ require("mason-lspconfig").setup({
 
   handlers = {
     function(server)
-      require("lspconfig")[server].setup({
-        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      })
+      opts = {
+        capabilities = {
+          require("cmp_nvim_lsp").default_capabilities()
+        },
+      }
+
+      if server == "clangd" then
+        opts = {
+          capabilities = {
+            require("cmp_nvim_lsp").default_capabilities()
+          },
+          init_options = {
+            fallbackFlags = {'--std=c++20'}
+          },
+        }
+      end
+      
+      require("lspconfig")[server].setup(opts)
     end,
   },
 })
