@@ -158,10 +158,19 @@ require("mason-lspconfig").setup({
   handlers = {
     default_setup,
     clangd = function()
+      local filetype = vim.fn.expand("%:e")
+      local flag = ""
+
+      if filetype == "c" then
+        flag = "--std=c17"
+      else
+        flag = "--std=c++20"
+      end
+
       require("lspconfig").clangd.setup({
         capabilities = lsp_capabilities,
         init_options = {
-          fallbackFlags = {"--std=c++20"}
+          fallbackFlags = {flag}
         },
       })
     end,
