@@ -20,10 +20,14 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
-  "L3MON4D3/LuaSnip",
   "sevenwhiteclouds/breezy",
-  "nvim-treesitter/nvim-treesitter",
-  {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = {"nvim-lua/plenary.nvim"}}
+  "nvim-treesitter/nvim-treesitter", {
+    "L3MON4D3/LuaSnip",
+    version = "v2.3",
+  }, {
+    "nvim-telescope/telescope.nvim", tag = "0.1.6",
+    dependencies = {"nvim-lua/plenary.nvim"}
+  },
 })
 
 -- treesitter
@@ -129,6 +133,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end
 })
 
+local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+local default_setup = function(server)
+  require("lspconfig")[server].setup({
+    capabilities = lsp_capabilities,
+  })
+end
+
 require("mason").setup({})
 require("mason-lspconfig").setup({
   ensure_installed = {
@@ -145,50 +156,34 @@ require("mason-lspconfig").setup({
   },
 
   handlers = {
-    function(server)
-      opts = {
-        capabilities = {
-          require("cmp_nvim_lsp").default_capabilities()
+    default_setup,
+    clangd = function()
+      require("lspconfig").clangd.setup({
+        capabilities = lsp_capabilities,
+        init_options = {
+          fallbackFlags = {"--std=c++20"}
         },
-      }
-
-      if server == "clangd" then
-        opts = {
-          capabilities = {
-            require("cmp_nvim_lsp").default_capabilities()
-          },
-          init_options = {
-            fallbackFlags = {'--std=c++20'}
-          },
-        }
-      end
-      
-      require("lspconfig")[server].setup(opts)
+      })
     end,
   },
 })
 
 local cmp = require("cmp")
-
 cmp.setup({
   -- to disable autocomplete
   --completion = {
   --  autocomplete = false
   --},
-
-  sources = cmp.config.sources({
+  sources = {
     {name = "nvim_lsp"},
-  }), 
-
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<CR>"] = cmp.mapping.confirm({select = true}),
+    ["<C-Space>"] = cmp.mapping.complete(),
+  }),
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
     end,
   },
-
-  mapping = cmp.mapping.preset.insert({
-    ["<CR>"] = cmp.mapping.confirm({select = true}),
-    ["<C-e>"] = cmp.mapping.abort(),
-    ["<C-Space>"] = cmp.mapping.complete(),
-  }),
 })
