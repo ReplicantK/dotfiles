@@ -21,11 +21,10 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "sevenwhiteclouds/breezy",
-  "nvim-treesitter/nvim-treesitter", {
-    "L3MON4D3/LuaSnip",
-    version = "v2.3",
-  }, {
-    "nvim-telescope/telescope.nvim", tag = "0.1.6",
+  "nvim-treesitter/nvim-treesitter",
+  {"myagko/nymph", branch = "Nvim"},
+  {"L3MON4D3/LuaSnip", version = "v2.3",},
+  {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
 })
@@ -95,7 +94,7 @@ cmd.autocmd("FileType make setlocal noexpandtab")
 -- theme and visual cmds
 cmd.syntax("on")
 require("breezy").setup({color_set = "breezy"})
-cmd.colorscheme("breezy")
+cmd.colorscheme("habamax")
 cmd.highlight("clear TODO")
 cmd.highlight("link TODO Comment")
 
