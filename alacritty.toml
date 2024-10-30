@@ -5,4 +5,29 @@ TERM = "xterm-256color"
 decorations = "None"
 
 [font]
-normal = { family = "Hack", style = "Regular" }
+normal = {family = "Hack", style = "Regular"}
+offset = {x = 1}
+size = 13.0
+
+[colors.primary]
+background = "#080808"
+foreground = "#c6c6c4"
+
+[colors.normal]
+red = "#a40b00"
+green = "#4e9a04"
+yellow = "#c4a001"
+blue = "#3465a4"
+magenta = "#5c3566"
+cyan = "#36cccb"
+white = "#c6c6c4"
+
+[colors.bright]
+black = "#696969"
+red = "#ef292a"
+green = "#8ae233"
+yellow = "#fae94e"
+blue = "#729fcf"
+magenta = "#ad7fa8"
+cyan = "#36cccb"
+white = "#fffafa"
