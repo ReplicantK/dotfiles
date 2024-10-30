@@ -45,7 +45,7 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export PATH="/usr/local/sbin:$PATH"
 
   # macos lode LO
-  export LODE_HOME="$HOME/lode"
+  export LODE_HOME="$HOME/libreoffice/lode"
   export CCACHE_CPP2=YES
   PATH="${LODE_HOME}/opt/bin:${PATH}"
 
