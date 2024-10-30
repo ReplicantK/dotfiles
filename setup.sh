@@ -46,7 +46,17 @@ else
   echo "found kitty directory in .config."
 fi
 
+echo "Checking for alacritty directory... \c"
+if [ ! -d "$HOME/.config/alacritty/" ]
+then
+  mkdir "$HOME/.config/alacritty/"
+  echo "done -> created missing alacritty directory in .config"
+else
+  echo "found alacritty directory in .config."
+fi
+
 echo "Creating symbolic links... \c"
+ln -sf "$HOME/configs/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$HOME/configs/mpv.conf" "$HOME/.config/mpv/mpv.conf"
 ln -sf "$HOME/configs/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 ln -sf "$HOME/configs/zathurarc" "$HOME/.config/zathura/zathurarc"
