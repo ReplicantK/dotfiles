@@ -86,10 +86,14 @@ set.wildmenu = true
 set.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
 set.laststatus = 3
 
--- misc cmds, annoying indentation etc
+-- misc cmds, annoying indentation, spammy diagnostics, etc
 cmd.filetype("indent off")
 cmd.filetype("plugin off")
 cmd.autocmd("FileType make setlocal noexpandtab")
+vim.diagnostic.config({
+  signs = false,
+  virtual_text = false,
+})
 
 -- theme and visual cmds
 cmd.syntax("on")
@@ -109,8 +113,9 @@ map("n", "tf", "<cmd>Telescope find_files<cr>")
 map("n", "tg", "<cmd>Telescope live_grep<cr>")
 map("n", "tb", "<cmd>Telescope buffers<cr>")
 
+-- lsp setup
 -- TODO: match all lsp shortcuts with intellij/vscode
--- lsp
+
 -- these work without an lsp
 map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
 map("n", "[d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
@@ -176,12 +181,9 @@ require("mason-lspconfig").setup({
   },
 })
 
+-- to disable autocomplete: completion = {autocomplete = false}
 local cmp = require("cmp")
 cmp.setup({
-  -- to disable autocomplete
-  --completion = {
-  --  autocomplete = false
-  --},
   sources = {
     {name = "nvim_lsp"},
   },
