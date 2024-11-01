@@ -1,4 +1,4 @@
 [core]
-	excludesfile = ~/configs/gitignore
+	excludesfile = ~/dotfiles/gitignore
 [init]
 	defaultBranch = master
