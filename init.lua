@@ -20,9 +20,7 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
-  "sevenwhiteclouds/breezy",
   "nvim-treesitter/nvim-treesitter",
-  {"myagko/nymph", branch = "Nvim"},
   {"L3MON4D3/LuaSnip", version = "v2.3",},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
@@ -80,7 +78,7 @@ set.timeout = true
 set.ttimeout = true
 set.timeoutlen = 3000
 set.ttimeoutlen = 10
-set.signcolumn = "yes:1"
+--set.signcolumn = "yes:1"
 set.path = ".,,**"
 set.wildmenu = true
 set.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
@@ -97,7 +95,6 @@ vim.diagnostic.config({
 
 -- theme and visual cmds
 cmd.syntax("on")
-require("breezy").setup({color_set = "breezy"})
 cmd.colorscheme("habamax")
 cmd.highlight("clear TODO")
 cmd.highlight("link TODO Comment")
