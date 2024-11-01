@@ -78,7 +78,7 @@ set.timeout = true
 set.ttimeout = true
 set.timeoutlen = 3000
 set.ttimeoutlen = 10
---set.signcolumn = "yes:1"
+set.signcolumn = "yes:1"
 set.path = ".,,**"
 set.wildmenu = true
 set.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
