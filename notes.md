@@ -10,6 +10,9 @@
 
 ### Neovim
 
+- Nymph (https://github.com/kepano/flexoki-neovim)
+- Flexoki (https://github.com/kepano/flexoki-neovim)
+- Breezy (https://github.com/sevenwhiteclouds/breezy)
 - Mellifluous (https://github.com/ramojus/mellifluous.nvim)
 - Mountain (https://github.com/mountain-theme/Mountain)
 - Tokyodark (https://github.com/tiagovla/tokyodark.nvim)
