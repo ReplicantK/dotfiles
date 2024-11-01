@@ -28,6 +28,15 @@ else
   echo "found mpv directory in .config."
 fi
 
+echo "Checking for nvim directory... \c"
+if [ ! -d "$HOME/.config/nvim/" ]
+then
+  mkdir "$HOME/.config/nvim"
+  echo "done -> created missing nvim directory in .config"
+else
+  echo "found nvim directory in .config."
+fi
+
 echo "Checking for zathura directory... \c"
 if [ ! -d "$HOME/.config/zathura/" ]
 then
@@ -58,6 +67,7 @@ fi
 echo "Creating symbolic links... \c"
 ln -sf "$HOME/dotfiles/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$HOME/dotfiles/mpv.conf" "$HOME/.config/mpv/mpv.conf"
+ln -sf "$HOME/dotfiles/init.lua" "$HOME/.config/nvim/init.lua"
 ln -sf "$HOME/dotfiles/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 ln -sf "$HOME/dotfiles/zathurarc" "$HOME/.config/zathura/zathurarc"
 ln -sf "$HOME/dotfiles/gitconfig" "$HOME/.gitconfig"
