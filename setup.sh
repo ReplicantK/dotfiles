@@ -1,5 +1,6 @@
 #!/bin/sh
-# TODO: add try checks to this script
+
+# TODO: add try blocks and fail checks to this script; add set -xe?
 echo "Checking for .config directory... \c"
 if [ ! -d "$HOME/.config/" ]
 then
@@ -17,21 +18,6 @@ then
 else
   echo "found .vim directory in home."
 fi
-
-echo "Checking for lightline directory... \c"
-if [ ! -d "$HOME/.vim/pack/plugins/start/lightline" ]
-then
-  git clone 'https://github.com/itchyny/lightline.vim' "$HOME/.vim/pack/plugins/start/lightline"
-  echo 'done -> installed lightline in missing directory'
-else
-  echo "found lightline directory in .vim."
-fi
-
-for file in "$HOME/configs/lightline_colors/"*
-do
-  ln -sf "$file" "$HOME/.vim/pack/plugins/start/lightline/autoload/lightline/colorscheme/"$(basename "$file")
-done
-echo 'done -> installed lightline themes'
 
 echo "Checking for mpv directory... \c"
 if [ ! -d "$HOME/.config/mpv/" ]
@@ -60,15 +46,25 @@ else
   echo "found kitty directory in .config."
 fi
 
+echo "Checking for alacritty directory... \c"
+if [ ! -d "$HOME/.config/alacritty/" ]
+then
+  mkdir "$HOME/.config/alacritty/"
+  echo "done -> created missing alacritty directory in .config"
+else
+  echo "found alacritty directory in .config."
+fi
+
 echo "Creating symbolic links... \c"
-ln -sf "$HOME/configs/mpv.conf" "$HOME/.config/mpv/mpv.conf"
-ln -sf "$HOME/configs/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-ln -sf "$HOME/configs/zathurarc" "$HOME/.config/zathura/zathurarc"
-ln -sf "$HOME/configs/gitconfig" "$HOME/.gitconfig"
-ln -sf "$HOME/configs/tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$HOME/configs/colors/" "$HOME/.vim/colors"
-ln -sf "$HOME/configs/vimrc" "$HOME/.vimrc"
-ln -sf "$HOME/configs/vimrc" "$HOME/.ideavimrc"
-ln -sf "$HOME/configs/zshrc" "$HOME/.zshrc"
+ln -sf "$HOME/dotfiles/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+ln -sf "$HOME/dotfiles/mpv.conf" "$HOME/.config/mpv/mpv.conf"
+ln -sf "$HOME/dotfiles/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+ln -sf "$HOME/dotfiles/zathurarc" "$HOME/.config/zathura/zathurarc"
+ln -sf "$HOME/dotfiles/gitconfig" "$HOME/.gitconfig"
+ln -sf "$HOME/dotfiles/tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$HOME/dotfiles/colors/" "$HOME/.vim/colors"
+ln -sf "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
+ln -sf "$HOME/dotfiles/vimrc" "$HOME/.ideavimrc"
+ln -sf "$HOME/dotfiles/zshrc" "$HOME/.zshrc"
 echo "done."
 echo "\nTask completed successfuly!"

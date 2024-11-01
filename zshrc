@@ -12,12 +12,16 @@ export HISTFILESIZE=1000000000
 # current session command memory 
 export HISTSIZE=1000000000
 
+# go path
+export GOPATH="$HOME/.go"
+
 # macos environment
 if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # node
   #export NVM_DIR="$HOME/.nvm"
   #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  # This loads nvm bash_completion
+  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
   # ruby
   export PATH="$HOME/.rbenv/bin:$PATH"
@@ -39,6 +43,17 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export CLICOLOR='1'
   export LSCOLORS='ExGxFxdxCxDxDxhbadacec'
   export PATH="/usr/local/sbin:$PATH"
+
+  # macos lode LO
+  export LODE_HOME="$HOME/libreoffice/lode"
+  export CCACHE_CPP2=YES
+  PATH="${LODE_HOME}/opt/bin:${PATH}"
+
+  # m4
+  #export PATH="/usr/local/opt/m4/bin:$PATH"
+
+  # dirty trick to get cpu and gpu temp in macos
+  alias lstemps='sudo powermetrics --samplers smc | grep -i "temp"'
 fi
 
 # linux environment
@@ -68,8 +83,9 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   # auto complete
   autoload -U compinit && compinit
 
-  # ps1 theme
-  PROMPT="%m %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[red]}%}»%{${reset_color}%} "
+  # ps1 themes
+  #PROMPT="%m %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[red]}%}»%{${reset_color}%} "
+  PROMPT="%F{green}%n@%m%f %F{blue}%4~%f%(?.. %F{red}%?%f) %F{blue}$%f "
 
   # completion, menu, all with color
   zstyle ':completion:*' completer _complete
@@ -78,13 +94,14 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' '+r:|[._-]=** r:|=** l:|=*'
 fi
 
-# aliases
+# universal aliases
+alias ssh-no-pass-test='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
 alias grep='grep --color=auto'
 alias bc='bc -l'
 alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
 alias weatherc="curl 'wttr.in/Riverside?m&format=%l+:+%c+%t+%h+%m+%M+%T+\n'"
 alias mpv='mpv --profile=1080'
-alias mpvhardware='mpv --profile=hardware'
-alias mpvhigh='mpv --profile=high'
-alias mpvaudio='mpv --profile=novideo'
-alias mpvsingle='mpv --profile=single'
+alias mpv-hardware='mpv --profile=hardware'
+alias mpv-high='mpv --profile=high'
+alias mpv-audio='mpv --profile=novideo'
+alias mpv-single='mpv --profile=single'

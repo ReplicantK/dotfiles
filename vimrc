@@ -1,35 +1,49 @@
 " REMINDER: reflect changes into init.lua
 
-" general quality of life
-set termguicolors
-set ruler
+" globals
+let g:is_posix = 1
+
+" general quality of life sets
+set mouse=""
 set number
+set showmode
+set colorcolumn=80
 set incsearch
 set hlsearch
-set backspace=indent,eol,start
+set termguicolors
 set ignorecase
+set autoindent
+set backspace=indent,eol,start
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set autoindent
-set laststatus=2
-set noshowmode
 set guicursor=""
-set mouse=""
-set colorcolumn=80
-let g:is_posix = 1
-inoremap jk <Esc>
-nnoremap j gj
-nnoremap k gk
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap <C-u> <C-u>zz
-nnoremap <C-d> <C-d>zz
+set timeout
+set ttimeout
+set timeoutlen=3000
+" only used when using LSP diagnostics
+"set signcolumn=yes
+set ttimeoutlen=10
+set path=.,,**
+set wildmenu
+set statusline=%F\ %h%m%r%=%-14(%l,%c%V%)\ %P
+set laststatus=2
+
+" misc cmds, annoying indentation etc
+filetype indent off
+filetype plugin off
 autocmd FileType make setlocal noexpandtab
 
-" theme and visual
+" theme and visual cmds
 syntax on
 colorscheme base16-tokyo-city-mod
-hi clear TODO
-hi link TODO Comment
-let g:lightline = {"colorscheme": "base16_tokyo_city_lightline_mod"}
+highlight clear TODO
+highlight link TODO Comment
+
+" key remaps
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap [b bprev<cr>
+nnoremap ]b bnext<cr>
