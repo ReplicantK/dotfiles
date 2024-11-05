@@ -103,7 +103,7 @@ cmd.autocmd("FileType make setlocal noexpandtab")
 
 -- theme and visual cmds
 cmd.syntax("on")
-cmd.colorscheme("tairiki")
+cmd.colorscheme("flexoki-dark")
 cmd.highlight("clear TODO")
 cmd.highlight("link TODO Comment")
 
