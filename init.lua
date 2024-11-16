@@ -15,18 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
- -- test native neovim themes
- "deparr/tairiki.nvim",
- "killitar/obscure.nvim",
- "sebasruiz09/fizz.nvim",
- "fenetikm/falcon",
- {"kepano/flexoki-neovim", name = "flexoki"},
-
- -- test native vim themes
- "kingpong/vimcolors",
- "sff1019/hogwarts.vim",
- "josuegaleas/jay",
-
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -103,7 +91,7 @@ cmd.autocmd("FileType make setlocal noexpandtab")
 
 -- theme and visual cmds
 cmd.syntax("on")
-cmd.colorscheme("flexoki-dark")
+cmd.colorscheme("habamax")
 cmd.highlight("clear TODO")
 cmd.highlight("link TODO Comment")
 
