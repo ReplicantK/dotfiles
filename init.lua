@@ -50,7 +50,7 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- testing diagnostics enable and disable here
+-- enable and disable diagnostics in normal mode with a delay
 local diagnostics_timer = nil
 
 vim.api.nvim_create_autocmd("ModeChanged", {
@@ -62,9 +62,9 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end
 
     diagnostics_timer = vim.defer_fn(function()
-      vim.diagnostic.config({virtual_text = true, signs = true, underline = true})
+      vim.diagnostic.enable()
     end, 3000)
-  end,
+  end
 })
 
 vim.api.nvim_create_autocmd("InsertEnter", {
@@ -74,73 +74,67 @@ vim.api.nvim_create_autocmd("InsertEnter", {
       diagnostics_timer = nil
     end
 
-    vim.diagnostic.config({virtual_text = false, signs = false, underline = true})
-  end,
+    vim.diagnostic.disable()
+  end
 })
 
 -- TODO: reflect changes into .vimrc
-local g = vim.g
-local set = vim.opt
-local cmd = vim.cmd
-local map = vim.keymap.set
-
 -- globals
-g.is_posix = 1
+vim.g.is_posix = 1
 
 -- general quality of life sets
-set.mouse = ""
-set.number = true
-set.showmode = true
-set.colorcolumn = "80"
-set.incsearch = true
-set.hlsearch = true
-set.termguicolors = true
-set.ignorecase = true
-set.autoindent = true
-set.backspace = "indent,eol,start"
-set.tabstop = 2
-set.shiftwidth = 2
-set.expandtab = true
-set.guicursor = ""
-set.timeout = true
-set.ttimeout = true
-set.timeoutlen = 3000
-set.ttimeoutlen = 10
-set.signcolumn = "yes:1"
-set.path = ".,,**"
-set.wildmenu = true
-set.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
-set.laststatus = 3
+vim.opt.mouse = ""
+vim.opt.number = true
+vim.opt.showmode = true
+vim.opt.colorcolumn = "80"
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.termguicolors = true
+vim.opt.ignorecase = true
+vim.opt.autoindent = true
+vim.opt.backspace = "indent,eol,start"
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
+vim.opt.timeout = true
+vim.opt.ttimeout = true
+vim.opt.timeoutlen = 3000
+vim.opt.ttimeoutlen = 10
+vim.opt.signcolumn = "yes:1"
+vim.opt.path = ".,,**"
+vim.opt.wildmenu = true
+vim.opt.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
+vim.opt.laststatus = 3
 
 -- misc cmds, annoying indentation, spammy diagnostics, etc
-cmd.filetype("indent off")
-cmd.filetype("plugin off")
-cmd.autocmd("FileType make setlocal noexpandtab")
+vim.cmd.filetype("indent off")
+vim.cmd.filetype("plugin off")
+vim.cmd.autocmd("FileType make setlocal noexpandtab")
 
 -- theme and visual cmds
-cmd.syntax("on")
-cmd.colorscheme("habamax")
-cmd.highlight("clear TODO")
-cmd.highlight("link TODO Comment")
+vim.cmd.syntax("on")
+vim.cmd.colorscheme("habamax")
+vim.cmd.highlight("clear TODO")
+vim.cmd.highlight("link TODO Comment")
 
 -- key remaps for scrolling, buffer cycle, etc
-map("n", "j", "gj")
-map("n", "k", "gk")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "<C-d>", "<C-d>zz")
-map("n", "[b", "<cmd>bprev<cr>")
-map("n", "]b", "<cmd>bnext<cr>")
-map("n", "tf", "<cmd>Telescope find_files<cr>")
-map("n", "tg", "<cmd>Telescope live_grep<cr>")
-map("n", "tb", "<cmd>Telescope buffers<cr>")
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "[b", "<cmd>bprev<cr>")
+vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
+vim.keymap.set("n", "tf", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "tg", "<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n", "tb", "<cmd>Telescope buffers<cr>")
 
 -- lsp setup
 -- TODO: match all lsp shortcuts with intellij/vscode
-
 -- these work without an lsp
-map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
-map("n", "[d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
-map("n", "]d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
+vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 
 -- these only work if there is an active language server
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -148,13 +142,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
     local opts = {buffer = event.buf}
 
-    map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-    map("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-    map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-    map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-    map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+    vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+    vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+    vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+    vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   end
 })
 
