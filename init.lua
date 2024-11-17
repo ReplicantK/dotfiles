@@ -50,7 +50,35 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- REMINDER: reflect changes into .vimrc
+-- testing diagnostics enable and disable here
+local diagnostics_timer = nil
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  pattern = "*:n",
+  callback = function()
+    if diagnostics_timer then
+      diagnostics_timer:stop()
+      diagnostics_timer = nil
+    end
+
+    diagnostics_timer = vim.defer_fn(function()
+      vim.diagnostic.config({virtual_text = true, signs = true, underline = true})
+    end, 3000)
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    if diagnostics_timer then
+      diagnostics_timer:stop()
+      diagnostics_timer = nil
+    end
+
+    vim.diagnostic.config({virtual_text = false, signs = false, underline = true})
+  end,
+})
+
+-- TODO: reflect changes into .vimrc
 local g = vim.g
 local set = vim.opt
 local cmd = vim.cmd
