@@ -2,3 +2,6 @@
 	excludesfile = ~/dotfiles/gitignore
 [init]
 	defaultBranch = master
+[user]
+	name = ReplicantK
+	email = maldonadokeldin@gmail.com
