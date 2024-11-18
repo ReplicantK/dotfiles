@@ -50,33 +50,34 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- enable and disable diagnostics in normal mode with a delay
-local diagnostics_timer = nil
+-- enable diagnostics when idle and disable when activity
+local timer = vim.uv.new_timer()
 
-vim.api.nvim_create_autocmd("ModeChanged", {
-  pattern = "*:n",
-  callback = function()
-    if diagnostics_timer then
-      diagnostics_timer:stop()
-      diagnostics_timer = nil
-    end
-
-    diagnostics_timer = vim.defer_fn(function()
-      vim.diagnostic.enable()
-    end, 3000)
-  end
-})
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-  callback = function()
-    if diagnostics_timer then
-      diagnostics_timer:stop()
-      diagnostics_timer = nil
-    end
-
+vim.on_key(
+  function()
+    timer:stop()
     vim.diagnostic.disable()
+
+    timer:start(3000, 0, vim.schedule_wrap(
+      function()
+        vim.diagnostic.enable()
+      end
+    ))
   end
-})
+)
+
+--vim.api.nvim_create_autocmd({"CursorMoved", "CursorMovedI", "TextChanged", "TextChangedI"}, {
+--  callback = function()
+--    timer:stop()
+--    vim.diagnostic.disable()
+--
+--    timer:start(3000, 0, vim.schedule_wrap(
+--      function()
+--        vim.diagnostic.enable()
+--      end
+--    ))
+--  end
+--})
 
 -- TODO: reflect changes into .vimrc
 -- globals
