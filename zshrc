@@ -18,6 +18,9 @@ export GOPATH="$HOME/.go"
 # g++ compiler
 export MallocNanoZone=0
 
+# color highlighting for man pages
+export MANPAGER="less -R --use-color -Ddg -Du+y"
+
 # macos environment
 if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # node
