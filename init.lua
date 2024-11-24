@@ -50,40 +50,12 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- enable diagnostics when idle and disable when activity
-local timer = vim.uv.new_timer()
-
-vim.on_key(
-  function()
-    timer:stop()
-    vim.diagnostic.disable()
-
-    timer:start(3000, 0, vim.schedule_wrap(
-      function()
-        vim.diagnostic.enable()
-      end
-    ))
-  end
-)
-
---vim.api.nvim_create_autocmd({"CursorMoved", "CursorMovedI", "TextChanged", "TextChangedI"}, {
---  callback = function()
---    timer:stop()
---    vim.diagnostic.disable()
---
---    timer:start(3000, 0, vim.schedule_wrap(
---      function()
---        vim.diagnostic.enable()
---      end
---    ))
---  end
---})
-
 -- TODO: reflect changes into .vimrc
 -- globals
 vim.g.is_posix = 1
 
 -- general quality of life sets
+vim.diagnostic.disable()
 vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.showmode = true
