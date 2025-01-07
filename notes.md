@@ -17,6 +17,9 @@
 - Obscure (https://github.com/killitar/obscure.nvim)
 - Hybrid (https://github.com/HoNamDuong/hybrid.nvim)
 - Breezy (https://github.com/sevenwhiteclouds/breezy)
+- Lackluster (the night variation) (https://github.com/slugbyte/lackluster.nvim)
+- Ashen (https://github.com/ficcdaf/ashen.nvim)
+- Vague (https://github.com/vague2k/vague.nvim)
 
 ### Other Neovim
 
