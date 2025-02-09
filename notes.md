@@ -1,5 +1,4 @@
 ## Fonts
-
 - Berkeley Mono (https://berkeleygraphics.com/typefaces/berkeley-mono/)
 - Hack (https://github.com/source-foundry/Hack)
 - Iosevka (https://github.com/be5invis/Iosevka)
@@ -8,9 +7,7 @@
 - Cozette (https://github.com/slavfox/Cozette)
 
 ## Text Editor Themes
-
 ### Top Neovim
-
 - Kanagawa (https://github.com/rebelot/kanagawa.nvim)
 - Tairiki (https://github.com/deparr/tairiki.nvim)
 - Iceberg (https://github.com/oahlen/iceberg.nvim/)
@@ -22,7 +19,6 @@
 - Vague (https://github.com/vague2k/vague.nvim)
 
 ### Other Neovim
-
 - Mountain (https://github.com/mountain-theme/Mountain)
 - Mellifluous (https://github.com/ramojus/mellifluous.nvim)
 - Tokyodark (https://github.com/tiagovla/tokyodark.nvim)
@@ -37,7 +33,6 @@
 - Sweet Fusion (https://github.com/DanielEliasib/sweet-fusion)
 
 ### Top Vim 
-
 - Iceberg (https://github.com/cocopon/iceberg.vim/)
 - base16-ayu-dark.vim (https://github.com/tinted-theming/tinted-vim)
 - base16-classic-dark.vim (https://github.com/tinted-theming/tinted-vim)
@@ -45,18 +40,15 @@
 - base16-tokyo-city.vim (https://github.com/tinted-theming/tinted-vim)
 
 ### Other Vim 
-
 - hogwarts (https://github.com/sff1019/hogwarts.vim)
 - Jay (https://github.com/josuegaleas/jay)
 - Philip (https://github.com/kingpong/vimcolors)
 
 ## Lightline Themes
-
 - Tech49 (https://raw.githubusercontent.com/mrusme/dotfiles/master/.config/nvim/colors/tech49.vim)
 - Vap0r (https://raw.githubusercontent.com/mrusme/dotfiles/master/.config/nvim/colors/vap0r.vim)
 
 ## Kitty Themes
-
 The themes listed below can be found here:
 https://github.com/dexpota/kitty-themes
 
@@ -66,5 +58,4 @@ https://github.com/dexpota/kitty-themes
 - Glacier
 
 ## Misc
-
 - Gruber Darker (https://github.com/rexim/gruber-darker-theme)
