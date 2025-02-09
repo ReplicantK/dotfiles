@@ -17,6 +17,7 @@
 - Lackluster (the night variation) (https://github.com/slugbyte/lackluster.nvim)
 - Ashen (https://github.com/ficcdaf/ashen.nvim)
 - Vague (https://github.com/vague2k/vague.nvim)
+- Alabaster (https://github.com/p00f/alabaster.nvim)
 
 ### Other Neovim
 - Mountain (https://github.com/mountain-theme/Mountain)
