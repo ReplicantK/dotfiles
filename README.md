@@ -1,28 +1,18 @@
-# About
-Most of the files in this repo are supposed to be found in the home folder as dot files. 
-Symbolic links are created with the `setup.sh` script to standardize a working environment 
-across different operating systems (i.e., GNU/Linux, macOS).
-
-The following assumes that the (this) GitHub local repository is found in the home folder.
-
-**Note:** when running the `setup.sh` script, a symbolic link named `.ideavimrc` is created in 
-the home directory. This file is _not_ present in this repo but is linked to the vimrc file 
-that exists in this repo. The purpose of this symbolic link is to enable the same settings for the 
-IdeaVim plugin for IntelliJ.
+## About
+My dotfiles.
 
 ## Installation
 1. Make the `setup.sh` script executable if it is not already by running `chmod +x setup.sh`.
 2. Run `setup.sh` with `./setup.sh`.
 
 ## More Information on These Files
-- `RectangleConfig.json`: settings for the Rectangle window manager for macOS.
-- `ublock.txt`: settings for the uBlock Origin extension.
-- `setup.sh`: shell script that creates all the symbolic links for the files listed below in an automated way.
-- `zshrc`: custom Zsh settings.
-- `colors`: directory that holds custom Vim themes.
 - `gitconfig`: global Git configuration file.
 - `gitignore`: global Git ignore file.
 - `mpv.conf`: settings and theming for the MPV CLI video player.
+- `RectangleConfig.json`: settings for the Rectangle window manager for macOS.
+- `setup.sh`: shell script that creates all the symbolic links for the files listed below in an automated way.
 - `tmux.conf`: settings and theming for the Tmux terminal multiplexer.
+- `ublock.txt`: settings for the uBlock Origin extension.
 - `vimrc`: nice-to-have options in Vim.
 - `zathurarc`: settings and theming for the CLI Zathura PDF viewer.
+- `zshrc`: custom Zsh settings.
