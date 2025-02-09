@@ -36,7 +36,7 @@ autocmd FileType make setlocal noexpandtab
 
 " theme and visual cmds
 syntax on
-colorscheme base16-tokyo-city-mod
+colorscheme habamax
 highlight clear TODO
 highlight link TODO Comment
 

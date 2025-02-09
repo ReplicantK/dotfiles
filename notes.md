@@ -39,6 +39,10 @@
 ### Top Vim 
 
 - Iceberg (https://github.com/cocopon/iceberg.vim/)
+- base16-ayu-dark.vim (https://github.com/tinted-theming/tinted-vim)
+- base16-classic-dark.vim (https://github.com/tinted-theming/tinted-vim)
+- base16-default-dark.vim (https://github.com/tinted-theming/tinted-vim)
+- base16-tokyo-city.vim (https://github.com/tinted-theming/tinted-vim)
 
 ### Other Vim 
 
