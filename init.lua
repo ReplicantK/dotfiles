@@ -55,7 +55,7 @@ require("nvim-treesitter.configs").setup({
 vim.g.is_posix = 1
 
 -- general quality of life sets
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
 vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.showmode = true
