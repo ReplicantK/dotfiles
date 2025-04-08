@@ -101,10 +101,6 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   zstyle ':completion:*' menu select
   zstyle ':completion:*' list-colors ''
   zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' '+r:|[._-]=** r:|=** l:|=*'
-
-  # poetry completions
-  fpath+="$HOME/.zfunc"
-  autoload -Uz compinit && compinit
 fi
 
 # universal aliases
