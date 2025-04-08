@@ -55,6 +55,9 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   export CCACHE_CPP2=YES
   PATH="${LODE_HOME}/opt/bin:${PATH}"
 
+  # pipx
+  export PATH="$HOME/.local/bin:${PATH}"
+
   # m4
   #export PATH="/usr/local/opt/m4/bin:$PATH"
 
