@@ -107,8 +107,8 @@ fi
 alias ssh-no-pass-test='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
 alias grep='grep --color=auto'
 alias bc='bc -l'
-alias weatherf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
-alias weatherc="curl 'wttr.in/Riverside?m&format=%l+:+%c+%t+%h+%m+%M+%T+\n'"
+alias weaf="curl 'wttr.in/Riverside?format=%l+:+%c+%t+%h+%m+%M+%T+&u'; echo"
+alias weac="curl 'wttr.in/Riverside?m&format=%l+:+%c+%t+%h+%m+%M+%T+\n'"
 alias mpv='mpv --profile=1080'
 alias mpv-hardware='mpv --profile=hardware'
 alias mpv-high='mpv --profile=high'
