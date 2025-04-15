@@ -1,0 +1,9 @@
+If:
+  PathMatch: .*\.(cc|cpp|cxx|hpp|hxx|h\+\+)$
+CompileFlags:
+  Add: -std=c++20
+---
+If:
+  PathMatch: .*\.c$
+CompileFlags:
+  Add: -std=c17

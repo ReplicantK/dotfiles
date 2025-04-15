@@ -64,6 +64,27 @@ else
   echo "found alacritty directory in .config."
 fi
 
+echo "Checking for clangd directory... \c"
+
+clangd_dir=""
+clangd_dir_top=""
+if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]
+then
+  clangd_dir="$HOME/Library/Preferences/clangd"
+  clangd_dir_top="~/Library"
+else
+  clangd_dir="$HOME/.config/clangd"
+  clangd_dir_top="~/.config"
+fi
+
+if [ ! -d $clangd_dir ]
+then
+  mkdir $clangd_dir
+  echo "done -> created missing clangd directory in $clangd_dir_top"
+else
+  echo "found clangd directory in $clangd_dir_top."
+fi
+
 echo "Creating symbolic links... \c"
 ln -sf "$HOME/dotfiles/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$HOME/dotfiles/mpv.conf" "$HOME/.config/mpv/mpv.conf"
@@ -75,5 +96,6 @@ ln -sf "$HOME/dotfiles/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 ln -sf "$HOME/dotfiles/vimrc" "$HOME/.ideavimrc"
 ln -sf "$HOME/dotfiles/zshrc" "$HOME/.zshrc"
+ln -sf "$HOME/dotfiles/config.yaml" "$clangd_dir/config.yaml"
 echo "done."
 echo "\nTask completed successfuly!"
