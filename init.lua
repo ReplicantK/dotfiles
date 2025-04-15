@@ -55,7 +55,6 @@ require("nvim-treesitter.configs").setup({
 vim.g.is_posix = 1
 
 -- general quality of life sets
-vim.diagnostic.enable(false)
 vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.showmode = true
@@ -84,6 +83,7 @@ vim.opt.laststatus = 3
 vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
+vim.diagnostic.enable(false)
 
 -- theme and visual cmds
 vim.cmd.syntax("on")
@@ -98,6 +98,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "[b", "<cmd>bprev<cr>")
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
+
+-- TODO: I really need to change these to use a more standard key
+-- for my custom layer of key bindings, not just for Telescope.
 vim.keymap.set("n", "tf", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "tg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "tb", "<cmd>Telescope buffers<cr>")
@@ -125,14 +128,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end
 })
 
-local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-local default_setup = function(server)
-  require("lspconfig")[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
-
-require("mason").setup({})
+-- activate mason and wire up lsp
+require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
@@ -146,27 +143,13 @@ require("mason-lspconfig").setup({
     "dockerls",
     "sqlls",
   },
+})
 
-  handlers = {
-    default_setup,
-    clangd = function()
-      local filetype = vim.fn.expand("%:e")
-      local flag = ""
-
-      if filetype == "c" then
-        flag = "--std=c17"
-      else
-        flag = "--std=c++20"
-      end
-
-      require("lspconfig").clangd.setup({
-        capabilities = lsp_capabilities,
-        init_options = {
-          fallbackFlags = {flag}
-        },
-      })
-    end,
-  },
+local default = require("cmp_nvim_lsp").default_capabilities()
+require("mason-lspconfig").setup_handlers({
+  function(server)
+    require("lspconfig")[server].setup({capabilities = default})
+  end,
 })
 
 -- to disable autocomplete: completion = {autocomplete = false}
