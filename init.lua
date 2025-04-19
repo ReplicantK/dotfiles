@@ -101,9 +101,9 @@ vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
 
 -- TODO: I really need to change these to use a more standard key
 -- for my custom layer of key bindings, not just for Telescope.
-vim.keymap.set("n", "tf", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "tg", "<cmd>Telescope live_grep<cr>")
-vim.keymap.set("n", "tb", "<cmd>Telescope buffers<cr>")
+vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
 
 -- lsp setup
 -- TODO: match all lsp shortcuts with intellij/vscode
