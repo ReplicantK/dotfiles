@@ -53,6 +53,7 @@ require("nvim-treesitter.configs").setup({
 -- TODO: reflect changes into .vimrc
 -- globals
 vim.g.is_posix = 1
+vim.g.mapleader = " "
 
 -- general quality of life sets
 vim.opt.mouse = ""
