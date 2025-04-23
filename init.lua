@@ -99,8 +99,14 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "[b", "<cmd>bprev<cr>")
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
 
--- TODO: I really need to change these to use a more standard key
--- for my custom layer of key bindings, not just for Telescope.
+-- telescope configuration
+require("telescope").setup({
+  defaults = {initial_mode = "normal"},
+  pickers = {
+    live_grep = {initial_mode = "insert"}
+  },
+})
+
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
