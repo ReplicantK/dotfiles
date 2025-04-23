@@ -99,6 +99,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "[b", "<cmd>bprev<cr>")
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
+vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>")
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 
 -- telescope configuration
 require("telescope").setup({
