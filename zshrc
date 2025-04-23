@@ -53,10 +53,7 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
   # macos lode LO
   export LODE_HOME="$HOME/libreoffice/lode"
   export CCACHE_CPP2=YES
-  PATH="${LODE_HOME}/opt/bin:${PATH}"
-
-  # pipx
-  export PATH="$HOME/.local/bin:${PATH}"
+  export PATH="${LODE_HOME}/opt/bin:${PATH}"
 
   # m4
   #export PATH="/usr/local/opt/m4/bin:$PATH"
@@ -76,6 +73,9 @@ if [ $(echo "$USER" | grep -c 'mininet') -gt 0 ]; then
   /usr/bin/keychain $HOME/.ssh/sevenwhiteclouds
   source $HOME/.keychain/mininet-vm-sh
 fi
+
+# pipx
+export PATH="$HOME/.local/bin:${PATH}"
 
 # all zsh specific options here
 # colors in particular need to come after because color setup is declared up top
