@@ -21,8 +21,8 @@
 
 ### Other Neovim
 - Amber (https://github.com/camgunz/amber)
-- Mountain (https://github.com/mountain-theme/Mountain)
 - Mellifluous (https://github.com/ramojus/mellifluous.nvim)
+- Mountain (https://github.com/mountain-theme/Mountain)
 - Tokyodark (https://github.com/tiagovla/tokyodark.nvim)
 - Minimal (https://github.com/Yazeed1s/minimal.nvim)
 - Boo (https://github.com/rockerBOO/boo-colorscheme-nvim)
