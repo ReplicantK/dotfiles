@@ -20,6 +20,7 @@
 - Alabaster (https://github.com/p00f/alabaster.nvim)
 
 ### Other Neovim
+- Amber (https://github.com/camgunz/amber)
 - Mountain (https://github.com/mountain-theme/Mountain)
 - Mellifluous (https://github.com/ramojus/mellifluous.nvim)
 - Tokyodark (https://github.com/tiagovla/tokyodark.nvim)
@@ -30,8 +31,8 @@
 - Oh Lucy (https://github.com/Yazeed1s/oh-lucy.nvim)
 - Nightfox (https://github.com/EdenEast/nightfox.nvim)
 - Moonfly (https://github.com/bluz71/vim-moonfly-colors)
-- Bore (https://github.com/sixfourtwelve/bore.vim)
 - Sweet Fusion (https://github.com/DanielEliasib/sweet-fusion)
+- Solarized (https://github.com/ishan9299/nvim-solarized-lua)
 
 ### Top Vim 
 - Iceberg (https://github.com/cocopon/iceberg.vim/)
