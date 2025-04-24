@@ -15,13 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "deparr/tairiki.nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "nvim-treesitter/nvim-treesitter",
-  {"L3MON4D3/LuaSnip", version = "v2.3",},
+  {"L2MON4D3/LuaSnip", version = "v2.3",},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
@@ -56,6 +57,7 @@ vim.g.is_posix = 1
 vim.g.mapleader = " "
 
 -- general quality of life sets
+vim.opt.background = "dark"
 vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.showmode = true
@@ -88,7 +90,7 @@ vim.diagnostic.enable(false)
 
 -- theme and visual cmds
 vim.cmd.syntax("on")
-vim.cmd.colorscheme("habamax")
+vim.cmd.colorscheme("tairiki")
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
 
