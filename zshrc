@@ -101,7 +101,7 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   #PROMPT="%F{green}%n@%m%f %F{blue}%4~%f%(?.. %F{red}%?%f) %F{blue}$%f "
 
   # arch inspired
-  PROMPT="%F{green}[%n@%m%f %F{blue}%4~%f%(?.. %F{red}%?%f)%F{blue}]$%f "
+  PROMPT="%F{green}[%n@%m%f %F{blue}%1~%f%(?.. %F{red}%?%f)%F{blue}]$%f "
 
   # completion, menu, all with color
   zstyle ':completion:*' completer _complete
