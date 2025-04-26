@@ -93,7 +93,6 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   autoload -U compinit && compinit
 
   # ps1 themes
-
   # old
   #PROMPT="%m %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[red]}%}»%{${reset_color}%} "
 
@@ -101,7 +100,10 @@ if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
   #PROMPT="%F{green}%n@%m%f %F{blue}%4~%f%(?.. %F{red}%?%f) %F{blue}$%f "
 
   # arch inspired
-  PROMPT="%F{green}[%n@%m%f %F{blue}%1~%f%(?.. %F{red}%?%f)%F{blue}]$%f "
+  #PROMPT="%F{green}[%n@%m%f %F{blue}%1~%f%(?.. %F{red}%?%f)%F{blue}]$%f "
+
+  # zep
+  PROMPT="%F{green}%n@%m%f%F{blue}[%1~]%f%(?..%F{red}%?%f)%F{blue}$%f "
 
   # completion, menu, all with color
   zstyle ':completion:*' completer _complete
