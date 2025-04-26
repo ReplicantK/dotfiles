@@ -86,7 +86,6 @@ vim.opt.laststatus = 3
 vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
-vim.diagnostic.enable(false)
 
 -- theme and visual cmds
 vim.cmd.syntax("on")
@@ -137,6 +136,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
     vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   end
+})
+
+-- lsp warnings and errors
+vim.opt.updatetime = 1300
+vim.diagnostic.enable(false)
+
+vim.api.nvim_create_autocmd({"CursorHold"}, {
+  desc = "Diagnostics on",
+  callback = function()
+    vim.diagnostic.enable(true)
+  end,
+})
+
+vim.api.nvim_create_autocmd({"TextChanged"}, {
+  desc = "Diagnostics off",
+  callback = function()
+    vim.diagnostic.enable(false)
+  end,
 })
 
 -- activate mason and wire up lsp
