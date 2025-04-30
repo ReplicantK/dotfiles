@@ -1,3 +1,5 @@
+-- TODO: reflect these settings into .vimrc
+
 -- lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -14,7 +16,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local lazy = require("lazy")
+lazy.setup({
   "deparr/tairiki.nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -51,12 +54,9 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- TODO: reflect changes into .vimrc
--- globals
+-- set globals, quality of life opts, theme, general keymaps, and remove annoyances
 vim.g.is_posix = 1
 vim.g.mapleader = " "
-
--- general quality of life sets
 vim.opt.background = "dark"
 vim.opt.mouse = ""
 vim.opt.number = true
@@ -81,64 +81,72 @@ vim.opt.path = ".,,**"
 vim.opt.wildmenu = true
 vim.opt.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
 vim.opt.laststatus = 3
-
--- misc cmds, annoying indentation, spammy diagnostics, etc
 vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
-
--- theme and visual cmds
 vim.cmd.syntax("on")
 vim.cmd.colorscheme("tairiki")
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
-
--- key remaps for scrolling, buffer cycle, etc
+vim.keymap.set("n", "gl", vim.diagnostic.setloclist)
+vim.keymap.set("n", "ge", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[b", vim.cmd.bprevious)
+vim.keymap.set("n", "]b", vim.cmd.bnext)
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "[b", "<cmd>bprev<cr>")
-vim.keymap.set("n", "]b", "<cmd>bnext<cr>")
-vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>")
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 
--- telescope configuration
-require("telescope").setup({
+-- init telescope and set keymaps
+local telescope = require("telescope")
+local telescope_builtin = require("telescope.builtin")
+
+telescope.setup({
   defaults = {initial_mode = "normal"},
   pickers = {
     live_grep = {initial_mode = "insert"}
   },
 })
 
-vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
-vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
+vim.keymap.set("n", "<leader>f", telescope_builtin.find_files)
+vim.keymap.set("n", "<leader>g", telescope_builtin.live_grep)
+vim.keymap.set("n", "<leader>b", telescope_builtin.buffers)
 
--- lsp setup
--- TODO: match all lsp shortcuts with intellij/vscode
--- these work without an lsp
-vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
-vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
-vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+-- init mason and set keymap
+local mason = require("mason")
+local mason_ui = require("mason.ui")
 
--- these only work if there is an active language server
-vim.api.nvim_create_autocmd("LspAttach", {
-  desc = "LSP actions",
-  callback = function(event)
-    local opts = {buffer = event.buf}
+local lspconf = require("lspconfig")
+local mason_lspconf = require("mason-lspconfig")
 
-    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-    vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-    vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-    vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-  end
+local cmp_src = require("cmp_nvim_lsp")
+
+mason.setup({
+  ensure_installed = {
+    "clangd",
+    "jdtls",
+    "ts_ls",
+    "pyright",
+    "bashls",
+    "html",
+    "cssls",
+    "tailwindcss",
+    "dockerls",
+    "sqlls",
+  },
 })
 
--- lsp warnings and errors
+mason_lspconf.setup_handlers({
+  function(server)
+    lspconf[server].setup({capabilities = cmp_src.default_capabilities()})
+  end,
+})
+
+vim.keymap.set("n", "<leader>m", mason_ui.open)
+
+-- make lsp warnings less annoying, remove global default keymaps, and set custom keymaps for lsp
 vim.opt.updatetime = 1300
 vim.diagnostic.enable(false)
 
@@ -156,31 +164,44 @@ vim.api.nvim_create_autocmd({"TextChanged"}, {
   end,
 })
 
--- activate mason and wire up lsp
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "clangd",
-    "jdtls",
-    "ts_ls",
-    "pyright",
-    "bashls",
-    "html",
-    "cssls",
-    "tailwindcss",
-    "dockerls",
-    "sqlls",
-  },
-})
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
 
-local default = require("cmp_nvim_lsp").default_capabilities()
-require("mason-lspconfig").setup_handlers({
-  function(server)
-    require("lspconfig")[server].setup({capabilities = default})
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "LSP actions",
+  callback = function(args)
+    local opts = {buffer = args.buf}
+
+    vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+
+    -- show a list of all the places where what is under the cursor is used
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+
+    -- show a list of all implementations of an interface or abstract methods/classes 
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+
+    -- show a list of  symbols (variables, functions, classes, methods, etc.)
+    -- in the current file, makes navigation easier
+    vim.keymap.set("n", "go", vim.lsp.buf.document_symbol, opts)
+
+    -- go to where type is defined, typically in header files, for example
+    vim.keymap.set("n", "gO", vim.lsp.buf.type_definition, opts)
+
+    -- show where a symbol is declared, but not necessarily defined
+    -- the difference between int num; and num = 5;
+    -- NOTE: many servers do not implement this method, use definition instead
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+
+    -- show where a symbol is defined and not just declared
+    -- declared and defined are often in the same location, but not always
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   end,
 })
 
--- to disable autocomplete: completion = {autocomplete = false}
+-- init code complete and snippets
+-- NOTE: to disable autocomplete set completion = {autocomplete = false}
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
