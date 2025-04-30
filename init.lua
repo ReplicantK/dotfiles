@@ -35,8 +35,12 @@ lazy.setup({
   },
 })
 
--- treesitter
-require("nvim-treesitter.configs").setup({
+vim.keymap.set("n", "<leader>l", lazy.show)
+
+-- init treesitter and set keymap
+local ts_conf = require("nvim-treesitter.configs")
+
+ts_conf.setup({
   highlight = {enable = true, additional_vim_regex_highlighting = false},
 
   auto_install = true,
@@ -58,9 +62,10 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
--- set globals, quality of life opts, theme, general keymaps, and remove annoyances
-vim.g.is_posix = 1
-vim.g.mapleader = " "
+local ts_ctrl = require("nvim-treesitter.install")
+vim.keymap.set("n", "<leader>t", ts_ctrl.update())
+
+-- quality of life opts, theme, general keymaps, and remove annoyances
 vim.opt.background = "dark"
 vim.opt.mouse = ""
 vim.opt.number = true
