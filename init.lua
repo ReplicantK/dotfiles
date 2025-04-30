@@ -1,6 +1,10 @@
 -- TODO: reflect these settings into .vimrc
 
--- lazy package manager
+-- set globals
+vim.g.is_posix = 1
+vim.g.mapleader = " "
+
+-- install lazy package manager and plugings/themes, if not installed, and set keymap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
