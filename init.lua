@@ -166,7 +166,7 @@ vim.api.nvim_create_autocmd({"CursorHold"}, {
   end,
 })
 
-vim.api.nvim_create_autocmd({"TextChanged"}, {
+vim.api.nvim_create_autocmd({"TextChanged", "InsertEnter"}, {
   desc = "Diagnostics off",
   callback = function()
     vim.diagnostic.enable(false)
