@@ -114,8 +114,23 @@ local telescope_builtin = require("telescope.builtin")
 
 telescope.setup({
   defaults = {initial_mode = "normal"},
+
   pickers = {
-    live_grep = {initial_mode = "insert"}
+    find_files = {
+      hidden = true,
+      no_ignore = true,
+      file_ignore_patterns = {".git/", ".venv/", "__pycache__/"}
+    },
+
+    live_grep = {
+      initial_mode = "insert",
+      additional_args = {
+        "--hidden",
+        "--glob", "!.git/",
+        "--glob", "!.venv/",
+        "--glob", "!__pycache__/"
+      }
+    }
   },
 })
 
