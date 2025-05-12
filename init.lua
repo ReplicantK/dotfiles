@@ -38,9 +38,7 @@ lazy.setup({
 vim.keymap.set("n", "<leader>l", lazy.show)
 
 -- init treesitter and set keymap
-local ts_conf = require("nvim-treesitter.configs")
-
-ts_conf.setup({
+require("nvim-treesitter.configs").setup({
   highlight = {enable = true, additional_vim_regex_highlighting = false},
 
   auto_install = true,
@@ -62,8 +60,7 @@ ts_conf.setup({
   }
 })
 
-local ts_ctrl = require("nvim-treesitter.install")
-vim.keymap.set("n", "<leader>t", ts_ctrl.update())
+vim.keymap.set("n", "<leader>t", require("nvim-treesitter.install").update())
 
 -- quality of life opts, theme, general keymaps, and remove annoyances
 vim.opt.background = "dark"
@@ -109,10 +106,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- init telescope and set keymaps
-local telescope = require("telescope")
-local telescope_builtin = require("telescope.builtin")
-
-telescope.setup({
+require("telescope").setup({
   defaults = {initial_mode = "normal"},
 
   pickers = {
@@ -134,6 +128,7 @@ telescope.setup({
   },
 })
 
+local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", telescope_builtin.find_files)
 vim.keymap.set("n", "<leader>g", telescope_builtin.live_grep)
 vim.keymap.set("n", "<leader>b", telescope_builtin.buffers)
