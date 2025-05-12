@@ -26,10 +26,10 @@ lazy.setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
-  "nvim-treesitter/nvim-treesitter",
+  "hrsh7th/cmp-nvim-lsp",
   {"L3MON4D3/LuaSnip", version = "v2.*"},
+  "nvim-treesitter/nvim-treesitter",
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
@@ -124,15 +124,8 @@ vim.keymap.set("n", "<leader>g", telescope_builtin.live_grep)
 vim.keymap.set("n", "<leader>b", telescope_builtin.buffers)
 
 -- init mason and set keymap
-local mason = require("mason")
-local mason_ui = require("mason.ui")
-
-local lspconf = require("lspconfig")
-local mason_lspconf = require("mason-lspconfig")
-
-local cmp_src = require("cmp_nvim_lsp")
-
-mason.setup({
+require("mason").setup()
+require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
     "jdtls",
@@ -147,13 +140,11 @@ mason.setup({
   },
 })
 
-mason_lspconf.setup_handlers({
-  function(server)
-    lspconf[server].setup({capabilities = cmp_src.default_capabilities()})
-  end,
+vim.lsp.config("*", {
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
 })
 
-vim.keymap.set("n", "<leader>m", mason_ui.open)
+vim.keymap.set("n", "<leader>m", require("mason.ui").open)
 
 -- make lsp warnings less annoying, remove global default keymaps, and set custom keymaps for lsp
 vim.opt.updatetime = 1300
