@@ -113,7 +113,7 @@ require("telescope").setup({
     find_files = {
       hidden = true,
       no_ignore = true,
-      file_ignore_patterns = {".git/", ".venv/", "__pycache__/"}
+      file_ignore_patterns = {".git/", ".venv/", "__pycache__/", ".DS_Store"}
     },
 
     live_grep = {
@@ -122,7 +122,8 @@ require("telescope").setup({
         "--hidden",
         "--glob", "!.git/",
         "--glob", "!.venv/",
-        "--glob", "!__pycache__/"
+        "--glob", "!__pycache__/",
+        "--glob", "!.DS_Store"
       }
     }
   },
