@@ -75,6 +75,7 @@ vim.opt.ignorecase = true
 vim.opt.autoindent = true
 vim.opt.backspace = ""
 vim.opt.tabstop = 2
+vim.opt.report = 0
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
