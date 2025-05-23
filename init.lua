@@ -22,7 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy = require("lazy")
 lazy.setup({
-  "deparr/tairiki.nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -92,7 +91,7 @@ vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
 vim.cmd.syntax("on")
-vim.cmd.colorscheme("tairiki")
+vim.cmd.colorscheme("habamax")
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
 vim.keymap.set("n", "gl", vim.diagnostic.setloclist)
