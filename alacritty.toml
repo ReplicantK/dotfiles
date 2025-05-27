@@ -2,7 +2,7 @@
 TERM = "xterm-256color"
 
 [window]
-decorations = "None"
+decorations = "Full"
 
 [font]
 normal = {family = "Hack", style = "Regular"}
