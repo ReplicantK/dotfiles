@@ -25,6 +25,7 @@ set ttimeoutlen=10
 "set signcolumn=yes
 set path=.,,**
 set wildmenu
+set wildoptions=pum
 set statusline=%F\ %h%m%r%=%-14(%l,%c%V%)\ %P
 set laststatus=2
 set updatetime=1300
