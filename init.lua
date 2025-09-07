@@ -32,6 +32,13 @@ lazy.setup({
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
+
+  -- Test themes.
+  {
+    "webhooked/kanso.nvim",
+    lazy = false,
+    priority = 1000,
+  }
 })
 
 vim.keymap.set("n", "<leader>l", lazy.show)
@@ -91,7 +98,17 @@ vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
 vim.cmd.syntax("on")
-vim.cmd.colorscheme("habamax")
+
+require("kanso").setup({
+  bold = false,
+  italics = false,
+  commentStyle = {italic = false},
+  keywordStyle = {italic = false},
+  undercurl = false,
+  background = {dark = "zen"}
+})
+vim.cmd.colorscheme("kanso")
+
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
 vim.keymap.set("n", "gl", vim.diagnostic.setloclist)

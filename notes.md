@@ -18,6 +18,7 @@
 - Ashen (https://github.com/ficcdaf/ashen.nvim)
 - Vague (https://github.com/vague2k/vague.nvim)
 - Alabaster (https://github.com/p00f/alabaster.nvim)
+- Kanso (https://github.com/webhooked/kanso.nvim)
 
 ### Other Neovim
 - Amber (https://github.com/camgunz/amber)

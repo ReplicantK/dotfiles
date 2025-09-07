@@ -10,7 +10,7 @@ offset = {x = 1}
 size = 13.0
 
 [colors.primary]
-background = "#080808"
+background = "#000000"
 foreground = "#c6c6c4"
 
 [colors.normal]

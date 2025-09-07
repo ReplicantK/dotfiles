@@ -33,7 +33,7 @@ filetype indent off
 filetype plugin off
 autocmd FileType make setlocal noexpandtab
 syntax on
-colorscheme habamax
+colorscheme lunaperche
 highlight clear TODO
 highlight link TODO Comment
 
