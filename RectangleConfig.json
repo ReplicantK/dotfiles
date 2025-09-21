@@ -1,6 +1,9 @@
 {
   "bundleId" : "com.knollsoft.Rectangle",
   "defaults" : {
+    "SUEnableAutomaticChecks" : {
+      "bool" : false
+    },
     "allowAnyShortcut" : {
       "bool" : false
     },
@@ -10,11 +13,11 @@
     "almostMaximizeWidth" : {
       "float" : 0
     },
-    "alternateDefaultShortcuts" : {
-      "bool" : true
-    },
     "altThirdCycle" : {
       "int" : 0
+    },
+    "alternateDefaultShortcuts" : {
+      "bool" : true
     },
     "alwaysAccountForStage" : {
       "int" : 0
@@ -34,10 +37,10 @@
     "cascadeAllDeltaSize" : {
       "float" : 30
     },
-    "centeredDirectionalMove" : {
+    "centerHalfCycles" : {
       "int" : 0
     },
-    "centerHalfCycles" : {
+    "centeredDirectionalMove" : {
       "int" : 0
     },
     "cornerSnapAreaSize" : {
@@ -45,6 +48,9 @@
     },
     "curtainChangeSize" : {
       "int" : 0
+    },
+    "cycleSizesIsChanged" : {
+      "bool" : false
     },
     "disabledApps" : {
 
@@ -125,7 +131,7 @@
       "int" : 0
     },
     "notifiedOfProblemApps" : {
-      "bool" : false
+      "bool" : true
     },
     "obtainWindowOnClick" : {
       "int" : 0
@@ -148,11 +154,17 @@
     "screenEdgeGapRight" : {
       "float" : 0
     },
+    "screenEdgeGapTop" : {
+      "float" : 0
+    },
+    "screenEdgeGapTopNotch" : {
+      "float" : 0
+    },
     "screenEdgeGapsOnMainScreenOnly" : {
       "bool" : false
     },
-    "screenEdgeGapTop" : {
-      "float" : 0
+    "selectedCycleSizes" : {
+      "int" : 0
     },
     "shortEdgeSnapAreaSize" : {
       "float" : 145
@@ -192,9 +204,6 @@
     },
     "subsequentExecutionMode" : {
       "int" : 0
-    },
-    "SUEnableAutomaticChecks" : {
-      "bool" : false
     },
     "systemWideMouseDown" : {
       "int" : 0
@@ -297,5 +306,5 @@
       "modifierFlags" : 1310720
     }
   },
-  "version" : "85"
+  "version" : "89"
 }
