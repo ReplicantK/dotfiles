@@ -121,3 +121,13 @@ alias mpv-hardware='mpv --profile=hardware'
 alias mpv-high='mpv --profile=high'
 alias mpv-audio='mpv --profile=novideo'
 alias mpv-single='mpv --profile=single'
+
+# open a rdp connection, using sensible settings
+function rdp() {
+  if [ -z $2 ]
+  then
+    xfreerdp /v:$1 /dynamic-resolution /from-stdin /sound /clipboard:direction-to:all
+  else
+    xfreerdp /v:$1 /dynamic-resolution /from-stdin /sound /clipboard:direction-to:all /drive:RDPMountPoint,$2
+  fi
+}
