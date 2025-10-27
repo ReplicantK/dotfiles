@@ -1,10 +1,11 @@
--- TODO: reflect these settings into .vimrc
+-- REMINDER: always reflect comparable settings into .vimrc
 
 -- set globals
 vim.g.is_posix = 1
 vim.g.mapleader = " "
 
--- install lazy package manager and plugings/themes, if not installed, and set keymap
+-- install lazy package manager and plugings/themes, if not installed, and set
+-- keymap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -27,15 +28,12 @@ lazy.setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
-  {"L3MON4D3/LuaSnip", version = "v2.*"},
   "nvim-treesitter/nvim-treesitter",
+  {"L3MON4D3/LuaSnip",version = "v2.*"},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
-
-  -- Test themes.
-  {
-    "webhooked/kanso.nvim",
+  {"webhooked/kanso.nvim",
     lazy = false,
     priority = 1000,
   }
@@ -174,7 +172,8 @@ vim.lsp.config("*", {
 
 vim.keymap.set("n", "<leader>m", require("mason.ui").open)
 
--- make lsp warnings less annoying, remove global default keymaps, and set custom keymaps for lsp
+-- make lsp warnings less annoying, remove global default keymaps, and set
+-- custom keymaps for lsp
 vim.opt.updatetime = 1300
 vim.diagnostic.enable(false)
 
