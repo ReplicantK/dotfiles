@@ -47,10 +47,6 @@
 - Jay (https://github.com/josuegaleas/jay)
 - Philip (https://github.com/kingpong/vimcolors)
 
-## Lightline Themes
-- Tech49 (https://raw.githubusercontent.com/mrusme/dotfiles/master/.config/nvim/colors/tech49.vim)
-- Vap0r (https://raw.githubusercontent.com/mrusme/dotfiles/master/.config/nvim/colors/vap0r.vim)
-
 ## Kitty Themes
 The themes listed below can be found here:
 https://github.com/dexpota/kitty-themes
