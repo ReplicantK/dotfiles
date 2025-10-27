@@ -15,9 +15,8 @@ else
   echo "GNU/Linux detected"
 fi
 
-echo -n "Checking for required directories and creating missing ones... "
+echo -n "Creating any required missing directories... "
 mkdir -p "$clangd_dir"
-mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.vim"
 mkdir -p "$HOME/.config/mpv"
 mkdir -p "$HOME/.config/nvim"
