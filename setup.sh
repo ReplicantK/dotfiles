@@ -1,6 +1,6 @@
 #!/bin/bash
+set -e
 
-# TODO: add try blocks and fail checks to this script; add set -xe?
 echo "Setup script launched."
 echo -n "Detecting operating system... "
 
