@@ -1,8 +1,3 @@
-#!/bin/sh
-
-# this script is not entirely portable (posix) because of the aliases being used
-# future iterations of this script may include shell functions as replacements
-
 # shell history
 export HISTFILE="$HOME/.sh_history"
 
@@ -22,7 +17,8 @@ export MallocNanoZone=0
 export MANPAGER="less -j.3 -R --use-color -Ddg -Du+y"
 
 # macos environment
-if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
+if [[ "$OSTYPE" == darwin* ]]
+then
   # node
   #export NVM_DIR="$HOME/.nvm"
   #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -63,13 +59,15 @@ if [ $(echo "$OSTYPE" | grep -c 'darwin') -gt 0 ]; then
 fi
 
 # linux environment
-if [ $(echo "$OSTYPE" | grep -c 'linux') -gt 0 ]; then
+if [[ "$OSTYPE" == linux* ]]
+then
   export PATH="/usr/sbin:$PATH"
   alias ls='ls --color=auto'
 fi
 
 # ssh key for mininet
-if [ $(echo "$USER" | grep -c 'mininet') -gt 0 ]; then
+if [[ "$USER" == mininet* ]]
+then
   /usr/bin/keychain $HOME/.ssh/sevenwhiteclouds
   source $HOME/.keychain/mininet-vm-sh
 fi
@@ -79,7 +77,8 @@ export PATH="$HOME/.local/bin:${PATH}"
 
 # all zsh specific options here
 # colors in particular need to come after because color setup is declared up top
-if [ $(echo "$SHELL" | grep -c 'zsh') -gt 0 ]; then
+if [[ "$SHELL" == /bin/zsh* ]]
+then
   # history that is saved from the current session into the history file
   export SAVEHIST=10000000
   # write to the history file immediately
