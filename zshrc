@@ -19,23 +19,10 @@ export MANPAGER="less -j.3 -R --use-color -Ddg -Du+y"
 # macos environment
 if [[ "$OSTYPE" == darwin* ]]
 then
-  # node
-  #export NVM_DIR="$HOME/.nvm"
-  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  # This loads nvm bash_completion
-  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
-
-  # ruby
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-
   # android emu
   export ANDROID_HOME=$HOME/Library/Android/sdk
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-  # mongodb
-  export PATH="/usr/local/opt/mongodb-community@5.0/bin:$PATH"
 
   # jdk to path 
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -51,9 +38,6 @@ then
   export CCACHE_CPP2=YES
   export PATH="${LODE_HOME}/opt/bin:${PATH}"
 
-  # m4
-  #export PATH="/usr/local/opt/m4/bin:$PATH"
-
   # dirty trick to get cpu and gpu temp in macos
   alias lstemps='sudo powermetrics --samplers smc | grep -i "temp"'
 fi
@@ -64,16 +48,6 @@ then
   export PATH="/usr/sbin:$PATH"
   alias ls='ls --color=auto'
 fi
-
-# ssh key for mininet
-if [[ "$USER" == mininet* ]]
-then
-  /usr/bin/keychain $HOME/.ssh/sevenwhiteclouds
-  source $HOME/.keychain/mininet-vm-sh
-fi
-
-# pipx
-export PATH="$HOME/.local/bin:${PATH}"
 
 # all zsh specific options here
 # colors in particular need to come after because color setup is declared up top
