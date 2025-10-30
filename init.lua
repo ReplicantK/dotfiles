@@ -122,9 +122,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- init telescope and set keymaps
 require("telescope").setup({
-  defaults = {initial_mode = "normal"},
-
   pickers = {
+    buffers = {initial_mode = "normal"},
+
     find_files = {
       hidden = true,
       no_ignore = true,
@@ -132,7 +132,7 @@ require("telescope").setup({
     },
 
     live_grep = {
-      initial_mode = "insert",
+      --initial_mode = "insert",
       additional_args = {
         "--hidden",
         "--glob", "!node_modules/",
@@ -142,7 +142,7 @@ require("telescope").setup({
         "--glob", "!.DS_Store"
       }
     }
-  },
+  }
 })
 
 local telescope_builtin = require("telescope.builtin")
