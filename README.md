@@ -1,6 +1,3 @@
-## About
-My dotfiles.
-
 ## Installation
 1. Make the `setup.sh` script executable if it is not already by running:
 `chmod +x setup.sh`.
