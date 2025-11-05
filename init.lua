@@ -122,9 +122,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- init telescope and set keymaps
 require("telescope").setup({
-  pickers = {
-    buffers = {initial_mode = "normal"},
+  defaults = {initial_mode = "normal"},
 
+  pickers = {
     find_files = {
       hidden = true,
       no_ignore = true,
@@ -139,7 +139,7 @@ require("telescope").setup({
     },
 
     live_grep = {
-      --initial_mode = "insert",
+      initial_mode = "insert",
       additional_args = {
         "--hidden",
         "--glob", "!.next/",
