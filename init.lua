@@ -128,13 +128,21 @@ require("telescope").setup({
     find_files = {
       hidden = true,
       no_ignore = true,
-      file_ignore_patterns = {"node_modules/", ".git/", ".venv/", "__pycache__/", ".DS_Store"}
+      file_ignore_patterns = {
+        ".next/",
+        "node_modules/",
+        ".git/",
+        ".venv/",
+        "__pycache__/",
+        ".DS_Store"
+      }
     },
 
     live_grep = {
       --initial_mode = "insert",
       additional_args = {
         "--hidden",
+        "--glob", "!.next/",
         "--glob", "!node_modules/",
         "--glob", "!.git/",
         "--glob", "!.venv/",
