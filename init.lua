@@ -211,6 +211,14 @@ vim.keymap.del("n", "gra")
 vim.keymap.del("n", "grr")
 vim.keymap.del("n", "gri")
 
+vim.keymap.set("n", "<Esc>", function()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_get_config(win).relative == "win" then
+      vim.api.nvim_win_close(win, false)
+    end
+  end
+end , {desc = "Clear floating windows with esc in normal mode"})
+
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "LSP actions",
   callback = function(args)
