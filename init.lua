@@ -23,6 +23,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy = require("lazy")
 lazy.setup({
+  -- testing theme
+  "https://git.sr.ht/~p00f/moduster.nvim",
+
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -97,15 +100,18 @@ vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
 vim.cmd.syntax("on")
 
-require("kanso").setup({
-  bold = false,
-  italics = false,
-  commentStyle = {italic = false},
-  keywordStyle = {italic = false},
-  undercurl = false,
-  background = {dark = "zen"}
-})
-vim.cmd.colorscheme("kanso")
+--require("kanso").setup({
+--  bold = false,
+--  italics = false,
+--  commentStyle = {italic = false},
+--  keywordStyle = {italic = false},
+--  undercurl = false,
+--  background = {dark = "zen"}
+--})
+--vim.cmd.colorscheme("kanso")
+
+-- testing theme
+vim.cmd.colorscheme("moduster")
 
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
