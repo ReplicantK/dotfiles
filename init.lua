@@ -243,11 +243,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- init code complete and snippets
--- NOTE: to disable autocomplete set completion = {autocomplete = false}
+-- NOTE: to disable autocomplete set `completion = {autocomplete = false}`
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 cmp.setup({
+  completion = {
+    autocomplete = false
+  },
+
   sources = {
     {name = "nvim_lsp"},
     {name = "luasnip"}
