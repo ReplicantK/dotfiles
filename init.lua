@@ -221,7 +221,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- show a list of all the places where what is under the cursor is used
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 
-    -- show a list of all implementations of an interface or abstract methods/classes 
+    -- show a list of all implementations of an interface or abstract methods/classes
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 
     -- show a list of  symbols (variables, functions, classes, methods, etc.)
