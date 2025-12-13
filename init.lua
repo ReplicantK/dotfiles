@@ -26,6 +26,8 @@ lazy.setup({
   -- testing theme
   "https://git.sr.ht/~p00f/moduster.nvim",
 
+  "p00f/alabaster.nvim",
+
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -111,7 +113,8 @@ vim.cmd.syntax("on")
 --vim.cmd.colorscheme("kanso")
 
 -- testing theme
-vim.cmd.colorscheme("moduster")
+--vim.cmd.colorscheme("moduster")
+vim.cmd.colorscheme("alabaster")
 
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
