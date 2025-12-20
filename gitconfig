@@ -5,3 +5,12 @@
 [user]
 	name = ReplicantK
 	email = maldonadokeldin@gmail.com
+[safe]
+	directory = /Volumes/git/google_fish
+	directory = /Volumes/Git/vigenere_cipher
+	directory = /Volumes/Git/leet
+	directory = /Volumes/Git/fun
+	directory = /Volumes/Git/google_fish
+	directory = /Volumes/Git/job_finder
+	directory = /Volumes/Git/learn_c++
+	directory = /Volumes/Git/simple_highlight
