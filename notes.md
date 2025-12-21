@@ -7,7 +7,16 @@
 - Cozette (https://github.com/slavfox/Cozette)
 
 ## Text Editor Themes
+
+### Top Deafult Neovim
+- Slate.vim
+- Sorbet.vim
+- Habamax.vim
+- Lunaperche.vim
+
 ### Top Neovim
+- Alabaster (https://github.com/p00f/alabaster.nvim)
+- Kanso (https://github.com/webhooked/kanso.nvim)
 - Kanagawa (https://github.com/rebelot/kanagawa.nvim)
 - Tairiki (https://github.com/deparr/tairiki.nvim)
 - Iceberg (https://github.com/oahlen/iceberg.nvim/)
@@ -17,8 +26,6 @@
 - Lackluster (the night variation) (https://github.com/slugbyte/lackluster.nvim)
 - Ashen (https://github.com/ficcdaf/ashen.nvim)
 - Vague (https://github.com/vague2k/vague.nvim)
-- Alabaster (https://github.com/p00f/alabaster.nvim)
-- Kanso (https://github.com/webhooked/kanso.nvim)
 
 ### Other Neovim
 - Amber (https://github.com/camgunz/amber)
