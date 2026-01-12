@@ -28,7 +28,10 @@ lazy.setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
-  "nvim-treesitter/nvim-treesitter",
+  -- TODO: update treesitter to the new incompatible rewrite
+  {"nvim-treesitter/nvim-treesitter",
+    branch = "master", lazy = false, build = ":TSUpdate"
+  },
   {"L3MON4D3/LuaSnip",version = "v2.*"},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
