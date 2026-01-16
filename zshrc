@@ -35,7 +35,10 @@ autoload -U compinit && compinit
 #PROMPT="%F{green}%n@%m%f%F{blue}[%1~]%f%(?..%F{red}%?%f)%F{blue}$%f "
 
 # test debian like prompt
-PROMPT='%B%F{green}%n@%m%f:%F{blue}%~%f%b%(!.#.$) '
+#PROMPT='%B%F{green}%n@%m%f:%F{blue}%~%f%b%(!.#.$) '
+
+# test other prompt
+PROMPT='%F{green}%n@%m%f %F{blue}%1~ %(!.#.%%)%f '
 
 # completion, menu, all with color
 zstyle ':completion:*' completer _complete
