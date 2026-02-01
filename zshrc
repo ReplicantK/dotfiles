@@ -4,7 +4,7 @@ export HISTFILE="$HOME/.sh_history"
 # max number of commands stored in history file
 export HISTFILESIZE=1000000000
 
-# current session command memory 
+# current session command memory
 export HISTSIZE=1000000000
 
 # go path
@@ -54,7 +54,7 @@ then
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-  # jdk to path 
+  # jdk to path
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
   export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
@@ -83,9 +83,9 @@ fi
 alias ssh-no-pass-test='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
 alias grep='grep --color=auto'
 alias bc='bc -l'
-alias mpv='mpv --profile=1080'
+
 alias mpv-hardware='mpv --profile=hardware'
-alias mpv-high='mpv --profile=high'
+alias mpv-1080='mpv --profile=1080'
 alias mpv-audio='mpv --profile=novideo'
 alias mpv-single='mpv --profile=single'
 
