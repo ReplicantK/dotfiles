@@ -35,10 +35,6 @@ lazy.setup({
   {"L3MON4D3/LuaSnip",version = "v2.*"},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
-  },
-  {"webhooked/kanso.nvim",
-    lazy = false,
-    priority = 1000,
   }
 })
 
