@@ -32,13 +32,7 @@ autoload -U colors && colors
 autoload -U compinit && compinit
 
 # zep
-#PROMPT="%F{green}%n@%m%f%F{blue}[%1~]%f%(?..%F{red}%?%f)%F{blue}$%f "
-
-# test debian like prompt
-#PROMPT='%B%F{green}%n@%m%f:%F{blue}%~%f%b%(!.#.$) '
-
-# test other prompt
-PROMPT='%F{green}%n@%m%f %F{blue}%1~ %(!.#.%%)%f '
+PROMPT='%F{green}%n@%m%f%F{blue}[%1~]%(!.#.$)%f '
 
 # completion, menu, all with color
 zstyle ':completion:*' completer _complete
