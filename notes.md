@@ -18,6 +18,8 @@
 - Alabaster (https://github.com/p00f/alabaster.nvim)
 - Kanso (https://github.com/webhooked/kanso.nvim)
 - Kanagawa (https://github.com/rebelot/kanagawa.nvim)
+- Deepwater (https://github.com/dgrco/deepwater.nvim")
+- Naysayer (https://github.com/RostislavArts/naysayer.nvim")
 - Tairiki (https://github.com/deparr/tairiki.nvim)
 - Iceberg (https://github.com/oahlen/iceberg.nvim/)
 - Obscure (https://github.com/killitar/obscure.nvim)
