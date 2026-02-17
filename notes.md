@@ -1,5 +1,10 @@
 ## Fonts
 - Berkeley Mono (https://berkeleygraphics.com/typefaces/berkeley-mono/)
+- Consolas (https://github.com/tsenart/sight/blob/master/fonts/Consolas.ttf)
+- Liberation Mono (https://www.fontsquirrel.com/fonts/liberation-mono)
+- Inconsolata (https://github.com/google/fonts/tree/main/ofl/inconsolata/static)
+- IBM Plex Mono (https://github.com/IBM/plex/releases/tag/%40ibm%2Fplex-mono%401.1.0)
+- Fira Mono (https://github.com/mozilla/Fira/tree/master/otf)
 - Hack (https://github.com/source-foundry/Hack)
 - Iosevka (https://github.com/be5invis/Iosevka)
 - Roboto Mono (https://fonts.google.com/specimen/Roboto+Mono)
