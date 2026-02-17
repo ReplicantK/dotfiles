@@ -19,6 +19,8 @@ export MANPAGER="less -j.3 -R --use-color -Ddg -Du+y"
 # history that is saved from the current session into the history file
 export SAVEHIST=10000000
 
+export EDITOR=nvim
+
 # write to the history file immediately
 setopt INC_APPEND_HISTORY
 
