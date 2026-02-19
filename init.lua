@@ -28,43 +28,14 @@ lazy.setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
-  -- TODO: update treesitter to the new incompatible rewrite
-  {"nvim-treesitter/nvim-treesitter",
-    branch = "master", lazy = false, build = ":TSUpdate"
-  },
   {"L3MON4D3/LuaSnip",version = "v2.*"},
   {"nvim-telescope/telescope.nvim", tag = "0.1.6",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
-  "webhooked/kanso.nvim"
+  "CreaturePhil/vim-handmade-hero"
 })
 
 vim.keymap.set("n", "<leader>l", lazy.show)
-
--- init treesitter and set keymap
-require("nvim-treesitter.configs").setup({
-  highlight = {enable = true, additional_vim_regex_highlighting = false},
-
-  auto_install = true,
-
-  ensure_installed = {
-    "cpp",
-    "java",
-    "javascript",
-    "python",
-    "c",
-    "html",
-    "css",
-    "dockerfile",
-    "bash",
-    "markdown",
-    "lua",
-    "vimdoc",
-    "sql",
-  }
-})
-
-vim.keymap.set("n", "<leader>t", require("nvim-treesitter.install").update())
 
 -- quality of life opts, theme, general keymaps, and remove annoyances
 vim.opt.background = "dark"
@@ -96,18 +67,7 @@ vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
 vim.cmd.autocmd("FileType make setlocal noexpandtab")
 vim.cmd.syntax("on")
-
-require('kanso').setup({
-  bold = false,
-  italics = true,
-  undercurl = false,
-  commentStyle = {italic = false},
-  keywordStyle = {italic = false},
-  minimal = true,
-  background = {dark = "mist"}
-})
-vim.cmd.colorscheme("kanso")
-
+vim.cmd.colorscheme("handmade-hero")
 vim.cmd.highlight("clear TODO")
 vim.cmd.highlight("link TODO Comment")
 vim.keymap.set("n", "gl", vim.diagnostic.setloclist)
@@ -217,6 +177,12 @@ end , {desc = "Clear floating windows with esc in normal mode"})
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "LSP actions",
   callback = function(args)
+    -- disable color highlighting from LSP. this method works with both
+    -- servers that obey and don't obey client capabilities because it doesn't
+    -- let neovim start the semantic tokens engine
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+
     local opts = {buffer = args.buf}
 
     vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
