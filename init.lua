@@ -65,7 +65,7 @@ vim.opt.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
 vim.opt.laststatus = 3
 vim.cmd.filetype("indent off")
 vim.cmd.filetype("plugin off")
-vim.cmd.autocmd("FileType make setlocal noexpandtab")
+vim.cmd.autocmd("FileType make,go setlocal noexpandtab")
 vim.cmd.syntax("on")
 vim.cmd.colorscheme("handmade-hero")
 vim.cmd.highlight("clear TODO")

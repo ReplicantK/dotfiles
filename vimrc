@@ -32,7 +32,7 @@ set updatetime=1300
 set showcmd
 filetype indent off
 filetype plugin off
-autocmd FileType make setlocal noexpandtab
+autocmd FileType make,go setlocal noexpandtab
 syntax on
 colorscheme lunaperche
 highlight clear TODO
