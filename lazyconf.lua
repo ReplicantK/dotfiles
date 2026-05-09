@@ -14,7 +14,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- initialize and configure lazy
+---- initialize and configure lazy
 local lazy = require("lazy")
 lazy.setup({
   "williamboman/mason.nvim",
