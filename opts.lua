@@ -1,0 +1,25 @@
+vim.opt.background = "dark"
+vim.opt.mouse = ""
+vim.opt.number = true
+vim.opt.showmode = true
+vim.opt.colorcolumn = "80"
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.termguicolors = true
+vim.opt.ignorecase = true
+vim.opt.autoindent = true
+vim.opt.backspace = ""
+vim.opt.tabstop = 2
+vim.opt.report = 0
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
+vim.opt.timeout = true
+vim.opt.ttimeout = true
+vim.opt.timeoutlen = 3000
+vim.opt.ttimeoutlen = 10
+vim.opt.signcolumn = "yes:1"
+vim.opt.path = ".,,**"
+vim.opt.wildmenu = true
+vim.opt.statusline = "%F %h%m%r%=%-14(%l,%c%V%) %P"
+vim.opt.laststatus = 3

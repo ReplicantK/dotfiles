@@ -1,0 +1,7 @@
+vim.cmd.filetype("indent off")
+vim.cmd.filetype("plugin off")
+vim.cmd.autocmd("FileType make,go setlocal noexpandtab")
+vim.cmd.syntax("on")
+vim.cmd.colorscheme("habamax")
+vim.cmd.highlight("clear TODO")
+vim.cmd.highlight("link TODO Comment")
