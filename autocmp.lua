@@ -2,11 +2,8 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+-- NOTE: to disable completion popup use `completion = { autocomplete = true }`
 cmp.setup({
-  completion = {
-    autocomplete = true
-  },
-
   sources = {
     {name = "nvim_lsp"},
     {name = "luasnip"}
