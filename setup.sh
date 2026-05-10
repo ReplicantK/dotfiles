@@ -47,6 +47,7 @@ ln -sf "$HOME/dotfiles/lspconfig.lua" "$HOME/.config/nvim/lua/lspconfig.lua"
 ln -sf "$HOME/dotfiles/masonconf.lua" "$HOME/.config/nvim/lua/masonconf.lua"
 ln -sf "$HOME/dotfiles/opts.lua" "$HOME/.config/nvim/lua/opts.lua"
 ln -sf "$HOME/dotfiles/telescopeconf.lua" "$HOME/.config/nvim/lua/telescopeconf.lua"
+ln -sf "$HOME/dotfiles/treesitconf.lua" "$HOME/.config/nvim/lua/treesitconf.lua"
 
 ln -sf "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 ln -sf "$HOME/dotfiles/vimrc" "$HOME/.ideavimrc"
