@@ -1,12 +1,22 @@
 -- REMINDER: always reflect comparable settings into .vimrc
+local profile = vim.env.NVIM_PROFILE or "stock"
 
-vim.g.mapleader = " "
+if profile ~= "stock" then
+  vim.g.mapleader = " "
 
-require("opts")
-require("keymaps")
-require("lazy")
-require("cmds")
-require("telescope")
-require("mason")
-require("lspconfig")
-require("autocmp")
+  require("opts")
+  require("keymaps")
+  require("cmds")
+end
+
+if profile == "minimal" or profile == "full" then
+  require("lazyconf")
+  require("telescopeconf")
+end
+
+if profile == "full" then
+  require("masonconf")
+  require("lspconfig")
+  require("treesitconf")
+  require("autocmp")
+end

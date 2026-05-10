@@ -20,6 +20,7 @@ export MANPAGER="less -j.3 -R --use-color -Ddg -Du+y"
 export SAVEHIST=10000000
 
 export EDITOR=nvim
+export NVIM_PROFILE=minimal
 bindkey -e
 
 # write to the history file immediately
