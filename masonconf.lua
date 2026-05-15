@@ -1,4 +1,5 @@
--- NOTE: mason and mason-lspconfig are configured as one package in this file
+-- NOTE: there isn't a separate mason config file, as mason and mason-lspconfig
+-- are configured as one package in this life
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {

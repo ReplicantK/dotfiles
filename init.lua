@@ -1,4 +1,3 @@
--- REMINDER: always reflect comparable settings into .vimrc
 local profile = vim.env.NVIM_PROFILE or "stock"
 
 if profile ~= "stock" then

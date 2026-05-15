@@ -1,4 +1,3 @@
-let g:is_posix = 1
 let g:mapleader = " "
 
 set background=dark

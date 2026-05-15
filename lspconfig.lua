@@ -45,8 +45,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- make lsp warnings less annoying, remove global default keymaps, and set
--- custom keymaps for lsp
+-- make lsp warnings less annoying by delaying warnings in normal mode
 vim.opt.updatetime = 1300
 vim.diagnostic.enable(false)
 
